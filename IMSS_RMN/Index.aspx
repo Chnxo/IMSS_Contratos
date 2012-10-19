@@ -4,6 +4,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <button class="btn btn-primary" type="button">
-        Chancho</button>
+    <h2>Bienvenido</h2>
 </asp:Content>

@@ -1,0 +1,15 @@
+﻿.Configuracion
+{
+    max-width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Bordes
+{
+    -moz-box-shadow: 0 0 6px 6px #678E24;
+    -webkit-box-shadow: 0 0 6px 6px #678E24;
+    box-shadow: 0 0 6px 6px #678E24;
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px;
+}
