@@ -94,6 +94,9 @@
   <ItemGroup>
     <Content Include="MP_Principal.Master" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dominio\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
