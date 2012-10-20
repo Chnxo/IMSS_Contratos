@@ -7,7 +7,7 @@ namespace IMSS_RMN.Datos
 {
     public class Fachada:IDatos
     {
-        #region Miembros de IDatos
+        #region Area RMN
 
         #region *Métodos de la clase Estudio*
         public void agregar_estudio(clsEstudio est)
@@ -127,8 +127,9 @@ namespace IMSS_RMN.Datos
 
         #endregion
 
-        #region Miembros de IDatos
+        #region Usuarios
 
+        #region Administrador
 
         public void agregar_administrador(Administrador adm)
         {
@@ -145,6 +146,10 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
+        #endregion
+
+        #region Capturista
+
         public void agregar_capturista(Capturista cap)
         {
             throw new NotImplementedException();
@@ -159,6 +164,8 @@ namespace IMSS_RMN.Datos
         {
             throw new NotImplementedException();
         }
+
+        #endregion
 
         #endregion
     }
