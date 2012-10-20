@@ -11,9 +11,9 @@
 }
 .Bordes
 {
-    -moz-box-shadow: 0 0 6px 6px #285CCA;
-    -webkit-box-shadow: 0 0 6px 6px #285CCA;
-    box-shadow: 0 0 6px 6px #285CCA;
+    -moz-box-shadow: 0 0 6px 6px #2F657F;
+    -webkit-box-shadow: 0 0 6px 6px #2F657F;
+    box-shadow: 0 0 6px 6px #2F657F;
     -moz-border-radius: 0 0 6px 6px;
     -webkit-border-radius: 0 0 6px 6px;
 }
@@ -28,5 +28,10 @@
 }
 .header
 {
-	
+	background-color:White;
+}
+.contenido
+{
+	margin-top:-22px;
+	background-color:White;
 }

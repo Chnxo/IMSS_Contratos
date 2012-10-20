@@ -126,5 +126,40 @@ namespace IMSS_RMN.Datos
         #endregion
 
         #endregion
+
+        #region Miembros de IDatos
+
+
+        public void agregar_administrador(Administrador adm)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void modificar_administrador(Administrador adm)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Administrador> allAdministradores()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void agregar_capturista(Capturista cap)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void modificar_capturista(Capturista cap)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Capturista> allCapturistas()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

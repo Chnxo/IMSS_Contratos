@@ -41,5 +41,22 @@ public interface IDatos
     void agregar_paciente(clsPaciente pac);
     void modificar_paciente(clsPaciente paci);
     List<clsPaciente> allPacientes();
+
+    #endregion
+
+    #region Administrador RMN
+
+    void agregar_administrador(Administrador adm);
+    void modificar_administrador(Administrador adm);
+    List<Administrador> allAdministradores();
+
+    #endregion
+
+    #region Capturista
+
+    void agregar_capturista(Capturista cap);
+    void modificar_capturista(Capturista cap);
+    List<Capturista> allCapturistas();
+
     #endregion
 }
