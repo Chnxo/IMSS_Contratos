@@ -23,10 +23,12 @@
                     </div>
                 </div>
                 <div class="row-fluid">
-                    <div class="span2" style="background-color: Black;">
-                        <!--Menú-->
+                    <div class="span12" style="background-color: Black;">
+                        <button class="btn btn-principal">Test</button>
                     </div>
-                    <div class="span10" style="background-color: Aqua;">
+                </div>
+                <div class="row-fluid">                    
+                    <div class="span12" style="background-color: Aqua;">
                         <!--Contenido-->
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
