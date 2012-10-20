@@ -1,4 +1,8 @@
-﻿.Configuracion
+﻿body
+{
+	background-image: url(../Imagenes/allfons.ru-1457.jpg);
+}
+.Configuracion
 {
     max-width: 1000px;
     height: auto;
@@ -7,9 +11,22 @@
 }
 .Bordes
 {
-    -moz-box-shadow: 0 0 6px 6px #678E24;
-    -webkit-box-shadow: 0 0 6px 6px #678E24;
-    box-shadow: 0 0 6px 6px #678E24;
+    -moz-box-shadow: 0 0 6px 6px #285CCA;
+    -webkit-box-shadow: 0 0 6px 6px #285CCA;
+    box-shadow: 0 0 6px 6px #285CCA;
     -moz-border-radius: 0 0 6px 6px;
     -webkit-border-radius: 0 0 6px 6px;
+}
+.logo
+{
+	height:100px;
+	width:auto;
+}
+.titulo
+{
+	margin-top:33px;
+}
+.header
+{
+	
 }

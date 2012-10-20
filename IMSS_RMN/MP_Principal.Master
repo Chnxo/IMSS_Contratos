@@ -17,9 +17,13 @@
         <div class="container-fluid">
             <div class="Bordes">
                 <div class="row-fluid">
-                    <div class="span12" style="background-color: Fuchsia;">
-                        <h1>
-                            IMMS Resonancia Magenética Nuclear</h1>
+                    <div class="span12 header">
+                        <div class="span4">
+                            <img class="logo" src="Imagenes/LogoAzul.png" />
+                        </div>
+                        <div class="span8">
+                            <h2 class="titulo">IMMS Resonancia Magenética Nuclear</h2>
+                        </div>
                     </div>
                 </div>
                 <div class="row-fluid">
