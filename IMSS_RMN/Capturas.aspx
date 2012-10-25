@@ -14,7 +14,7 @@
                         <label class="control-label">
                             Núm. Contrato</label>
                         <div class="controls">
-                            <input type="text" class="input-mini" />
+                            <asp:TextBox ID="numContrato" runat="server" class="input-mini"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -23,7 +23,7 @@
                         <label class="control-label">
                             Presupuesto</label>
                         <div class="controls">
-                            <input type="text" class="input-medium" />
+                            <asp:TextBox ID="presupuesto" runat="server" class="input-medium"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -34,7 +34,7 @@
                         <label class="control-label">
                             Fecha de Solicitud</label>
                         <div class="controls">
-                            <input type="text" class="input-medium" />
+                            <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -43,7 +43,7 @@
                         <label class="control-label">
                             Fecha de Realización</label>
                         <div class="controls">
-                            <input type="text" class="input-medium" />
+                            <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -53,60 +53,60 @@
                     <label class="control-label">
                         Nombre del Paciente</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="nombrePaciente" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Apellido Paterno</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="apellidoPaterno" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Fecha de Materno</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="apellidoMaterno" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Afiliación</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="afiliacion" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Agregado</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="agregado" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Número de Teléfono</label>
                     <div class="controls">
-                        <input type="text" class="input-medium" />
+                        <asp:TextBox ID="numeroTelefono" runat="server" class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Tipo de Estudio</label>
                     <div class="controls">
-                        <select class="input-large">
-                            <option>Extremidades Simple y Contrastada</option>
-                        </select>
+                        <asp:DropDownList ID="tipoEstudio" runat="server" class="input-xlarge">
+                            <asp:ListItem>Extremidades Simple y Contrastada</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
-                        Fecha de Solicitud</label>
+                        Prioridad del Estudio</label>
                     <div class="controls">
-                        <select class="input-large">
-                            <option>Urgente</option>
-                        </select>
+                        <asp:DropDownList ID="prioridadEstudio" runat="server" class="input-medium">
+                            <asp:ListItem>Urgente</asp:ListItem>
+                        </asp:DropDownList>
                     </div>
                 </h2>
                 <h2>
