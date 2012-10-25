@@ -117,10 +117,8 @@
                     </div>
                 </h2>
                 <h2 class="centrado">
-                    <button class="btn btn-success">
-                        Agregar Datos del Estudio</button>
-                    <button class="btn">
-                        Modificar Datos</button>
+                    <asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio" class="btn btn-success"/>
+                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn"/>
                 </h2>
             </div>
         </div>
