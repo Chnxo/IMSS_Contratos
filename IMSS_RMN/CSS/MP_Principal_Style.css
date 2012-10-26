@@ -1,6 +1,8 @@
 ﻿body
 {
 	background-image: url(../Imagenes/allfons.ru-1457.jpg);
+	background-size:cover;
+	-webkit-background-size:cover;
 }
 .Configuracion
 {

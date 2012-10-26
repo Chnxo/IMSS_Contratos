@@ -94,6 +94,7 @@
     <Content Include="Imagenes\UMAE.png" />
     <Content Include="Imagenes\UMAEcopia.png" />
     <Content Include="Index.aspx" />
+    <Content Include="JS\jquery-1.8.2.min.js" />
     <Content Include="JS\Knockout\knockout-2.1.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
