@@ -120,6 +120,7 @@
       <DependentUpon>Capturas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Datos\Fachada.cs" />
+    <Compile Include="Datos\SQLHelper.cs" />
     <Compile Include="Dominio\Administrador.cs" />
     <Compile Include="Dominio\Capturista.cs" />
     <Compile Include="Dominio\clsEstudio.cs" />

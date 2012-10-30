@@ -23,6 +23,8 @@ CapturasViewModel = function (jsonModel) {
     var self = jsonModel || {};
     self = ko.mapping.fromJS(self);
 
+    self.alertMessage = ko.observable("");
+
     self.GuardarPaciente = function () {
         var paciente = ko.mapping.toJS(self.Paciente);
         $.ajax({
@@ -32,10 +34,17 @@ CapturasViewModel = function (jsonModel) {
             contentType: "application/json",
             dataType: "json",
             success: function (data) {
-                alert(":D");
+                if (data.d) {
+                    self.alertMessage("Usuario agregado correctamente.");
+                    $('#alertModal').modal('show');
+                } else {
+                    self.alertMessage("Usuario no agregado.");
+                    $('#alertModal').modal('show');
+                }
             },
             error: function (error) {
-                alert("D:");
+                self.alertMessage("No se pudo establecer conexión con el servidor.");
+                $('#alertModal').modal('show');
             }
         });
     };

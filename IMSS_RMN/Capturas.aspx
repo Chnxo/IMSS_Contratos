@@ -129,5 +129,22 @@
             </div>
         </div>
     </div>
+    <%-- Modal Alert --%>
+    <div id="alertModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-header centrado">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;</button>
+            <h3 id="myModalLabel">
+                Mensaje</h3>
+        </div>
+        <div class="modal-body">
+            <p class="centrado" data-bind="text: alertMessage"></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">
+                OK</button>
+        </div>
+    </div>
     <script src="JS/ViewModels/CapturasViewModel.js" type="text/javascript"></script>
 </asp:Content>

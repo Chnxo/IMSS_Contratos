@@ -5,13 +5,13 @@ using System.Web;
 
 namespace IMSS_RMN.Datos
 {
-    public sealed class Fachada:IDatos
+    public sealed class Fachada : IDatos
     {
         private static Fachada laFachada = new Fachada();
-        
+        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+
         public Fachada()
         {
-
         }
 
         public static Fachada getFachada()
@@ -22,17 +22,8 @@ namespace IMSS_RMN.Datos
         #region Area RMN
 
         #region *Métodos de la clase Estudio*
+
         public void agregar_estudio(clsEstudio est)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void modificar_estudio(clsEstudio estu)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<clsEstudio> getEstudios()
         {
             throw new NotImplementedException();
         }
@@ -42,15 +33,21 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        #endregion
-
-        #region *Métodos de la clase Presupuesto*
-        public void agregar_presupuesto(clsPresupuesto pre)
+        public List<clsEstudio> getEstudios()
         {
             throw new NotImplementedException();
         }
 
-        public void modificar_presupuesto(clsPresupuesto pres)
+        public void modificar_estudio(clsEstudio estu)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion *Métodos de la clase Estudio*
+
+        #region *Métodos de la clase Presupuesto*
+
+        public void agregar_presupuesto(clsPresupuesto pre)
         {
             throw new NotImplementedException();
         }
@@ -65,17 +62,16 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        #endregion
-
-        #region *Métodos de la clase Prioridad*
-        
-
-        public void agregar_Prioridad(clsPrioridad pri)
+        public void modificar_presupuesto(clsPresupuesto pres)
         {
             throw new NotImplementedException();
         }
 
-        public void modificar_prioridad(clsPrioridad prio)
+        #endregion *Métodos de la clase Presupuesto*
+
+        #region *Métodos de la clase Prioridad*
+
+        public void agregar_Prioridad(clsPrioridad pri)
         {
             throw new NotImplementedException();
         }
@@ -90,17 +86,16 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        #endregion
-
-        #region *Métodos de la clase Tipos de Estudios*
-        
-
-        public void agregar_tipo_estudio(clsTipoEstudio nTipo)
+        public void modificar_prioridad(clsPrioridad prio)
         {
             throw new NotImplementedException();
         }
 
-        public void modificar_tipo_estudio(clsTipoEstudio tp)
+        #endregion *Métodos de la clase Prioridad*
+
+        #region *Métodos de la clase Tipos de Estudios*
+
+        public void agregar_tipo_estudio(clsTipoEstudio nTipo)
         {
             throw new NotImplementedException();
         }
@@ -115,12 +110,28 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        #endregion
+        public void modificar_tipo_estudio(clsTipoEstudio tp)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion *Métodos de la clase Tipos de Estudios*
 
         #region *Métodos de la classe Paciente*
-        
 
         public void agregar_paciente(clsPaciente pac)
+        {
+            object[] paciente = new object[5];
+            paciente[0] = pac.Afiliacion;
+            paciente[1] = pac.Ape_pat;
+            paciente[2] = pac.Ape_mat;
+            paciente[3] = pac.Nombre;
+            paciente[4] = pac.Num_tel;
+
+            SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
+        }
+
+        public List<clsPaciente> allPacientes()
         {
             throw new NotImplementedException();
         }
@@ -130,14 +141,9 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        public List<clsPaciente> allPacientes()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion *Métodos de la classe Paciente*
 
-        #endregion
-
-        #endregion
+        #endregion Area RMN
 
         #region Usuarios
 
@@ -148,26 +154,21 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        public void modificar_administrador(Administrador adm)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Administrador> allAdministradores()
         {
             throw new NotImplementedException();
         }
 
-        #endregion
-
-        #region Capturista
-
-        public void agregar_capturista(Capturista cap)
+        public void modificar_administrador(Administrador adm)
         {
             throw new NotImplementedException();
         }
 
-        public void modificar_capturista(Capturista cap)
+        #endregion Administrador
+
+        #region Capturista
+
+        public void agregar_capturista(Capturista cap)
         {
             throw new NotImplementedException();
         }
@@ -177,8 +178,13 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        #endregion
+        public void modificar_capturista(Capturista cap)
+        {
+            throw new NotImplementedException();
+        }
 
-        #endregion
+        #endregion Capturista
+
+        #endregion Usuarios
     }
 }
