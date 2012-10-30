@@ -2,33 +2,43 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using IMSS_RMN.Datos;
+using IMSS_RMN.ViewModels;
+using Newtonsoft.Json;
 
 namespace IMSS_RMN
 {
     public partial class Capturas : System.Web.UI.Page
     {
-        private Fachada fac = new Fachada();
-
-        protected void Page_Load(object sender, EventArgs e)
+        [WebMethod]
+        public static CapturasViewModel CargarViewModel()
         {
-          
+            CapturasViewModel cvm = new CapturasViewModel();
+            return cvm;
         }
 
-        protected void agregar_Click(object sender, EventArgs e)
+        [WebMethod]
+        public static bool GuardarPaciente(string pacienteJSON)
         {
             try
             {
-                clsPaciente paciente = new clsPaciente(afiliacion.Text, apellidoPaterno.Text, apellidoMaterno.Text, nombrePaciente.Text, numeroTelefono.Text);
-                fac.agregar_paciente(paciente);
+                clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);
+                Fachada fachada = Fachada.getFachada();
+                fachada.agregar_paciente(paciente);
+                return true;
             }
             catch (Exception)
             {
-                
+                return false;
             }
-            
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
         }
     }
 }

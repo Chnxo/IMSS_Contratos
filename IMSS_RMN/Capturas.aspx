@@ -53,28 +53,32 @@
                     <label class="control-label">
                         Nombre del Paciente</label>
                     <div class="controls">
-                        <asp:TextBox ID="nombrePaciente" runat="server" class="input-medium"></asp:TextBox>
+                        <asp:TextBox data-bind="value: Paciente.Nombre" ID="nombrePaciente" runat="server"
+                            class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Apellido Paterno</label>
                     <div class="controls">
-                        <asp:TextBox ID="apellidoPaterno" runat="server" class="input-medium"></asp:TextBox>
+                        <asp:TextBox data-bind="value: Paciente.Ape_pat" ID="apellidoPaterno" runat="server"
+                            class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Fecha de Materno</label>
                     <div class="controls">
-                        <asp:TextBox ID="apellidoMaterno" runat="server" class="input-medium"></asp:TextBox>
+                        <asp:TextBox data-bind="value: Paciente.Ape_mat" ID="apellidoMaterno" runat="server"
+                            class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
                     <label class="control-label">
                         Afiliación</label>
                     <div class="controls">
-                        <asp:TextBox ID="afiliacion" runat="server" class="input-medium"></asp:TextBox>
+                        <asp:TextBox data-bind="value: Paciente.Afiliacion" ID="afiliacion" runat="server"
+                            class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
@@ -88,7 +92,8 @@
                     <label class="control-label">
                         Número de Teléfono</label>
                     <div class="controls">
-                        <asp:TextBox ID="numeroTelefono" runat="server" class="input-medium"></asp:TextBox>
+                        <asp:TextBox data-bind="value: Paciente.Num_tel" ID="numeroTelefono" runat="server"
+                            class="input-medium"></asp:TextBox>
                     </div>
                 </h2>
                 <h2>
@@ -117,11 +122,12 @@
                     </div>
                 </h2>
                 <h2 class="centrado">
-                    <asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio" 
-                        class="btn btn-primary" onclick="agregar_Click"/>
-                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn"/>
+                    <asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio" class="btn btn-primary"
+                        data-bind="click:$root.GuardarPaciente" />
+                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />
                 </h2>
             </div>
         </div>
     </div>
+    <script src="JS/ViewModels/CapturasViewModel.js" type="text/javascript"></script>
 </asp:Content>

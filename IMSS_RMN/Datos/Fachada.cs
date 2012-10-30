@@ -5,8 +5,20 @@ using System.Web;
 
 namespace IMSS_RMN.Datos
 {
-    public class Fachada:IDatos
+    public sealed class Fachada:IDatos
     {
+        private static Fachada laFachada = new Fachada();
+        
+        public Fachada()
+        {
+
+        }
+
+        public static Fachada getFachada()
+        {
+            return laFachada;
+        }
+
         #region Area RMN
 
         #region *Métodos de la clase Estudio*
