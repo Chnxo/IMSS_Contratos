@@ -103,6 +103,7 @@
     <Content Include="JS\Knockout\knockout.mapping-latest.debug.js" />
     <Content Include="JS\Knockout\knockout.mapping-latest.js" />
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -136,6 +137,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MP_Principal.Master.cs">
       <DependentUpon>MP_Principal.Master</DependentUpon>
