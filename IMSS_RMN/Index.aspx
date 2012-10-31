@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
+    <div style="min-height:540px;">
         <h2 class="centrado">
             IMSS | UMAE | Unidad de Alta Especialidad</h2>
             <div class="span8 offset2">
@@ -12,7 +12,7 @@
             <!-- Carousel items -->
             <div class="carousel-inner">
                 <div class="active item">
-                    <img src="Imagenes/logosIMSS/umae1.jpg" style="width:auto;" />
+                    <img src="Imagenes/logosIMSS/umae1.jpg"/>
                     <div class="carousel-caption">
                         <h4>
                             UMAE 1</h4>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="Imagenes/logosIMSS/umae2.jpg" />
+                    <img src="Imagenes/logosIMSS/umae2.jpg"/>
                     <div class="carousel-caption">
                         <h4>
                             UMAE 2</h4>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="Imagenes/logosIMSS/umae3.jpg" />
+                    <img src="Imagenes/logosIMSS/umae3.jpg"/>
                     <div class="carousel-caption">
                         <h4>UMAE 3</h4>
                         <p>
