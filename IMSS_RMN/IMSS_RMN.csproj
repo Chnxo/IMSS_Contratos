@@ -71,6 +71,7 @@
     <Content Include="CSS\EstilosGenerales.css" />
     <Content Include="CSS\MP_Principal_Style.css" />
     <Content Include="Imagenes\aceroinox.jpg" />
+    <Content Include="Imagenes\allfons.ru-1457-FHD.jpg" />
     <Content Include="Imagenes\allfons.ru-1457.jpg" />
     <Content Include="Imagenes\barra.gif" />
     <Content Include="Imagenes\barra2.gif" />
@@ -102,6 +103,8 @@
     <Content Include="JS\Knockout\knockout-2.1.0.js" />
     <Content Include="JS\Knockout\knockout.mapping-latest.debug.js" />
     <Content Include="JS\Knockout\knockout.mapping-latest.js" />
+    <Content Include="JS\Knockout\knockout.validation.js" />
+    <Content Include="JS\Knockout\knockout.validation.min.js" />
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />

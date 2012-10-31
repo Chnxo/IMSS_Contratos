@@ -1,8 +1,7 @@
 ﻿body
 {
-	background-image: url(../Imagenes/allfons.ru-1457.jpg);
-	background-size:cover;
-	-webkit-background-size:cover;
+	background-image: url(../Imagenes/allfons.ru-1457-FHD.jpg);
+	background-attachment:fixed;
 }
 .Configuracion
 {
@@ -37,7 +36,4 @@
 {
 	margin-top:-22px;
 	background-color:White;
-	-moz-border-radius: 0 0 6px 6px;
-    -webkit-border-radius: 0 0 6px 6px;
-    border-radius: 0 0 6px 6px; 
 }

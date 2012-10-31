@@ -4,6 +4,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style type="text/css">
+        label
+        {
+            display: block;
+        }
+        .validationMessage
+        {
+            color: Red;
+        }
+        .customMessage
+        {
+            color: Orange;
+        }
+        ​</style>
     <h4 class="centrado">
         Control de pacientes con subrogación de estudio de Resonacia Magnética Nuclear</h4>
     <div>
@@ -55,6 +69,7 @@
                     <div class="controls">
                         <asp:TextBox data-bind="value: Paciente.Nombre" ID="nombrePaciente" runat="server"
                             class="input-medium"></asp:TextBox>
+                        <%--<span class="validationMessage" style="display:none;"></span>--%>
                     </div>
                 </h2>
                 <h2>
@@ -139,7 +154,8 @@
                 Mensaje</h3>
         </div>
         <div class="modal-body">
-            <p class="centrado" data-bind="text: alertMessage"></p>
+            <p class="centrado" data-bind="text: alertMessage">
+            </p>
         </div>
         <div class="modal-footer">
             <button class="btn" data-dismiss="modal" aria-hidden="true">
