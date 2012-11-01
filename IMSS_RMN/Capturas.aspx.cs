@@ -37,6 +37,13 @@ namespace IMSS_RMN
             }
         }
 
+        [WebMethod]
+        public static void TestGetAll()
+        {
+            Fachada fachada = Fachada.getFachada();
+            fachada.allEstudios();
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }

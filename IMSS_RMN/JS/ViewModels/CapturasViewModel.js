@@ -28,7 +28,7 @@ CapturasViewModel = function (jsonModel) {
     //Validaciones
     ko.validation.init();
 
-//    ko.validation.rules.pattern.message = 'Invalid.';
+    //    ko.validation.rules.pattern.message = 'Invalid.';
 
     ko.validation.configure({
         registerExtenders: true,
@@ -69,6 +69,20 @@ CapturasViewModel = function (jsonModel) {
         } else {
             self.errors.showAllMessages();
         }
+    };
+
+    self.TestGetAll = function () {
+        $.ajax({
+            type: "POST",
+            url: "Capturas.aspx/TestGetAll",
+            data: {},
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+            },
+            error: function (error) {
+            }
+        });
     };
 
     return self
