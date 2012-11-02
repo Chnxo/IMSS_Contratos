@@ -28,7 +28,15 @@ namespace IMSS_RMN.Datos
 
         public void agregar_estudio(clsEstudio est)
         {
-            throw new NotImplementedException();
+            object[] estudio = new object[5];
+            estudio[0] = est.Fecha_sol;
+            estudio[1] = est.Fecha_rea;
+            estudio[2] = est.Observacion;
+            estudio[3] = est.Fk_tipo_id;
+            estudio[4] = est.Fk_pri_id;
+            estudio[5] = est.Fk_Afiliacion;
+
+            SqlHelper.ExecuteNonQuery(connString, "agr_est_RMN", estudio);
         }
 
         public List<clsEstudio> allEstudios()
@@ -67,7 +75,15 @@ namespace IMSS_RMN.Datos
 
         public void agregar_presupuesto(clsPresupuesto pre)
         {
-            throw new NotImplementedException();
+            object[] presupuesto = new object[5];
+            presupuesto[0] = pre.Partida;
+            presupuesto[1] = pre.Num_contrato;
+            presupuesto[2] = pre.Concepto;
+            presupuesto[3] = pre.Ano;
+            presupuesto[4] = pre.Monto;
+            presupuesto[5] = pre.Vigencia;
+
+            SqlHelper.ExecuteNonQuery(connString, "agr_presupuesto_RMN", presupuesto);
         }
 
         public void eliminar_presupuesto(int clave_pre)
