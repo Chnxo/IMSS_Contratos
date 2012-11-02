@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
 
 namespace IMSS_RMN.Datos
 {
     public sealed class Fachada : IDatos
     {
         private static Fachada laFachada = new Fachada();
-        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
 
         public Fachada()
         {
@@ -30,7 +31,15 @@ namespace IMSS_RMN.Datos
 
         public List<clsEstudio> allEstudios()
         {
-            throw new NotImplementedException();
+            List<clsEstudio> estudios = new List<clsEstudio>();
+            DataTable dt = SqlHelper.ExecuteDataset(connString, "all_estudios_RMN").Tables[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                clsEstudio estu = new clsEstudio();
+                estu.Ape_pat = dt.Rows[i]["ape_pat"].ToString();
+                estudios.Add(estu);
+            }
+            return estudios;
         }
 
         public List<clsEstudio> getEstudios()

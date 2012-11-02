@@ -11,9 +11,11 @@ namespace IMSS_RMN.ViewModels
         {
             Paciente = new clsPaciente();
             Presupuesto = new clsPresupuesto();
+            Estudio = new clsEstudio();
         }
 
         public clsPaciente Paciente { get; set; }
         public clsPresupuesto Presupuesto { get; set; }
+        public clsEstudio Estudio { get; set; }
     }
 }
