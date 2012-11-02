@@ -33,7 +33,7 @@ var GuardarPaciente = function () {
                 viewModel.alertMessage("Usuario agregado correctamente.");
                 $('#alertModal').modal('show');
             } else {
-                self.alertMessage("Usuario no agregado.");
+                viewModel.alertMessage("Usuario no agregado.");
                 $('#alertModal').modal('show');
             }
         },
