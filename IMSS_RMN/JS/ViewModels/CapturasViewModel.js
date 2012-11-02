@@ -10,7 +10,8 @@ $(function () {
         dataType: "json",
         success: function (data) {
             viewModelJS = data.d;
-            viewModel = new CapturasViewModel(viewModelJS);
+            viewModel = ko.mapping.fromJS(viewModelJS);
+            viewModel.alertMessage = ko.observable("");
             ko.applyBindings(viewModel);
         },
         error: function (error) {
@@ -19,71 +20,41 @@ $(function () {
     });
 });
 
-CapturasViewModel = function (jsonModel) {
-    var self = jsonModel || {};
-    self = ko.mapping.fromJS(self);
-
-    self.alertMessage = ko.observable("");
-
-    //Validaciones
-    ko.validation.init();
-
-    //    ko.validation.rules.pattern.message = 'Invalid.';
-
-    ko.validation.configure({
-        registerExtenders: true,
-        messagesOnModified: true,
-        insertMessages: true,
-        parseInputAttributes: true,
-        messageTemplate: null
-    });
-
-    self.Paciente.Nombre = ko.observable().extend({ required: true });
-
-    self.errors = ko.validation.group(self);
-
-    self.GuardarPaciente = function () {
-        if (self.errors().length == 0) {
-            self.errors.showAllMessages();
-            var paciente = ko.mapping.toJS(self.Paciente);
-            $.ajax({
-                type: "POST",
-                url: "Capturas.aspx/GuardarPaciente",
-                data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "'}",
-                contentType: "application/json",
-                dataType: "json",
-                success: function (data) {
-                    if (data.d) {
-                        self.alertMessage("Usuario agregado correctamente.");
-                        $('#alertModal').modal('show');
-                    } else {
-                        self.alertMessage("Usuario no agregado.");
-                        $('#alertModal').modal('show');
-                    }
-                },
-                error: function (error) {
-                    self.alertMessage("No se pudo establecer conexión con el servidor.");
-                    $('#alertModal').modal('show');
-                }
-            });
-        } else {
-            self.errors.showAllMessages();
-        }
-    };
-
-    self.TestGetAll = function () {
-        $.ajax({
-            type: "POST",
-            url: "Capturas.aspx/TestGetAll",
-            data: {},
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (data) {
-            },
-            error: function (error) {
+var GuardarPaciente = function () {
+    var paciente = ko.mapping.toJS(viewModel.Paciente);
+    $.ajax({
+        type: "POST",
+        url: "Capturas.aspx/GuardarPaciente",
+        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "'}",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            if (data.d) {
+                viewModel.alertMessage("Usuario agregado correctamente.");
+                $('#alertModal').modal('show');
+            } else {
+                self.alertMessage("Usuario no agregado.");
+                $('#alertModal').modal('show');
             }
-        });
-    };
+        },
+        error: function (error) {
+            viewModel.alertMessage("No se pudo establecer conexión con el servidor.");
+            $('#alertModal').modal('show');
+        }
+    });
+};
 
-    return self
-}
+var TestGA = function () {
+    $.ajax({
+        type: "POST",
+        url: "Capturas.aspx/TestGetAll",
+        data: {},
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            alert("chancho pancho");
+        },
+        error: function (error) {
+        }
+    });
+};

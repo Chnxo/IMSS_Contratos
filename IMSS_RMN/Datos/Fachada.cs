@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
-using System.Data;
 
 namespace IMSS_RMN.Datos
 {
     public sealed class Fachada : IDatos
     {
-        private static Fachada laFachada = new Fachada();
-        private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
+        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+private static Fachada laFachada = new Fachada();
+
+        //private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
 
         public Fachada()
         {
@@ -33,12 +35,19 @@ namespace IMSS_RMN.Datos
         {
             List<clsEstudio> estudios = new List<clsEstudio>();
             DataTable dt = SqlHelper.ExecuteDataset(connString, "all_estudios_RMN").Tables[0];
+            
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 clsEstudio estu = new clsEstudio();
-                estu.Ape_pat = dt.Rows[i]["ape_pat"].ToString();
+                estu.Fecha_sol = dt.Rows[i]["Est_Fecha_sol"].ToString();
+                estu.Fecha_rea = dt.Rows[i]["Est_Fecha_rea"].ToString();
+                estu.Observacion = dt.Rows[i]["Est_Observaciones"].ToString();
+                estu.Fk_tipo_id = Convert.ToInt32(dt.Rows[i]["Fk_Tipo_Id"]);
+                estu.Fk_pri_id = Convert.ToInt32(dt.Rows[i]["Fk_Pri_Id"]);
+                estu.Fk_Afiliacion = dt.Rows[i]["Fk_Pac_Afiliacion"].ToString();
                 estudios.Add(estu);
             }
+
             return estudios;
         }
 
