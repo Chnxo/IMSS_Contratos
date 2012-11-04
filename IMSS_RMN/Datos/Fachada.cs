@@ -8,10 +8,10 @@ namespace IMSS_RMN.Datos
 {
     public sealed class Fachada : IDatos
     {
-        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        //private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
         private static Fachada laFachada = new Fachada();
 
-        //private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
+        private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
 
         public Fachada()
         {

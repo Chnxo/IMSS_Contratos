@@ -42,7 +42,14 @@
                                 <ul class="nav">
                                     <li><a href="Index.aspx">Inicio</a></li>
                                     <li><a href="Capturas.aspx">Captura</a></li>
-                                    <li><a href="#">Administradores</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#">Administradores</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="AdmonPresupuesto.aspx">Admón. Del Presupuesto</a></li>
+                                            <li><a href="AdmonTiposEstudios.aspx">Admón. de Tipos de Estudios</a></li>
+                                            <li><a href="AdmonPrioridades.aspx">Admón. de Prioridad</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#">Reportes</a></li>
                                 </ul>
                             </div>

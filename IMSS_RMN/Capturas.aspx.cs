@@ -29,6 +29,7 @@ namespace IMSS_RMN
                 clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);
                 Fachada fachada = Fachada.getFachada();
                 fachada.agregar_paciente(paciente);
+
                 return true;
             }
             catch (Exception)

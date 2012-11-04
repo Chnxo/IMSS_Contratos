@@ -11,7 +11,10 @@ $(function () {
         success: function (data) {
             viewModelJS = data.d;
             viewModel = ko.mapping.fromJS(viewModelJS);
+
+            // Helpers
             viewModel.alertMessage = ko.observable("");
+
             ko.applyBindings(viewModel);
         },
         error: function (error) {
@@ -25,7 +28,7 @@ var GuardarPaciente = function () {
     $.ajax({
         type: "POST",
         url: "Capturas.aspx/GuardarPaciente",
-        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "'}",
+        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "}",
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
