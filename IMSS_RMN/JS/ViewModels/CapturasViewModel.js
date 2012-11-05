@@ -23,12 +23,13 @@ $(function () {
     });
 });
 
-var GuardarPaciente = function () {
+var GuardarEstudio = function () {
     var paciente = ko.mapping.toJS(viewModel.Paciente);
+    var estudio = ko.mapping.toJS(viewModel.Estudio);
     $.ajax({
         type: "POST",
-        url: "Capturas.aspx/GuardarPaciente",
-        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "}",
+        url: "Capturas.aspx/GuardarEstudio",
+        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "', 'estudioJSON':'" + ko.mapping.toJSON(estudio) + "'}",
         contentType: "application/json",
         dataType: "json",
         success: function (data) {

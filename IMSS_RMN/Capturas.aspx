@@ -138,7 +138,7 @@
                 </h2>
                 <h2 class="centrado">
                     <asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio" class="btn btn-primary"
-                        data-bind="click: GuardarPaciente" />
+                        data-bind="click: GuardarEstudio" />
                     <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />
                     <asp:Button ID="Button1" runat="server" Text="Test Get All" class="btn" 
                         data-bind="click: TestGA"/>

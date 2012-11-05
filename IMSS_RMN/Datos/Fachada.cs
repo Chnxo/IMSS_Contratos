@@ -8,10 +8,10 @@ namespace IMSS_RMN.Datos
 {
     public sealed class Fachada : IDatos
     {
-        //private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
         private static Fachada laFachada = new Fachada();
 
-        private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
+        //private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
 
         public Fachada()
         {
@@ -26,17 +26,26 @@ namespace IMSS_RMN.Datos
 
         #region *Métodos de la clase Estudio*
 
-        public void agregar_estudio(clsEstudio est)
+        public bool agregar_estudio(clsEstudio est)
         {
-            object[] estudio = new object[5];
-            estudio[0] = est.Fecha_sol;
-            estudio[1] = est.Fecha_rea;
-            estudio[2] = est.Observacion;
-            estudio[3] = est.Fk_tipo_id;
-            estudio[4] = est.Fk_pri_id;
-            estudio[5] = est.Fk_Afiliacion;
+            try
+            {
+                object[] estudio = new object[5];
+                estudio[0] = est.Fecha_sol;
+                estudio[1] = est.Fecha_rea;
+                estudio[2] = est.Observacion;
+                estudio[3] = est.Fk_tipo_id;
+                estudio[4] = est.Fk_pri_id;
+                estudio[5] = est.Fk_Afiliacion;
 
-            SqlHelper.ExecuteNonQuery(connString, "agr_est_RMN", estudio);
+                SqlHelper.ExecuteNonQuery(connString, "agr_est_RMN", estudio);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public List<clsEstudio> allEstudios()
@@ -153,16 +162,30 @@ namespace IMSS_RMN.Datos
 
         #region *Métodos de la classe Paciente*
 
-        public void agregar_paciente(clsPaciente pac)
+        public bool agregar_paciente(clsPaciente pac)
         {
-            object[] paciente = new object[5];
-            paciente[0] = pac.Afiliacion;
-            paciente[1] = pac.Ape_pat;
-            paciente[2] = pac.Ape_mat;
-            paciente[3] = pac.Nombre;
-            paciente[4] = pac.Num_tel;
+            try
+            {
+                object[] paciente = new object[5];
+                paciente[0] = pac.Afiliacion;
+                paciente[1] = pac.Ape_pat;
+                paciente[2] = pac.Ape_mat;
+                paciente[3] = pac.Nombre;
+                paciente[4] = pac.Num_tel;
 
-            SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
+                SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+        }
+
+        public bool eliminar_paciente(clsPaciente pac)
+        {
+            throw new NotImplementedException();
         }
 
         public List<clsPaciente> allPacientes()

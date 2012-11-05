@@ -9,7 +9,7 @@ using System.Web;
 public interface IDatos
 {
     #region *Estudios RMN*
-    void agregar_estudio(clsEstudio est);
+    bool agregar_estudio(clsEstudio est);
     void modificar_estudio(clsEstudio estu);
     List<clsEstudio>getEstudios();
     List<clsEstudio> allEstudios();
@@ -38,7 +38,8 @@ public interface IDatos
     #endregion
 
     #region *Pacientes RMN*
-    void agregar_paciente(clsPaciente pac);
+    bool agregar_paciente(clsPaciente pac);
+    bool eliminar_paciente(clsPaciente pac);
     void modificar_paciente(clsPaciente paci);
     List<clsPaciente> allPacientes();
 

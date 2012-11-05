@@ -22,15 +22,26 @@ namespace IMSS_RMN
         }
 
         [WebMethod]
-        public static bool GuardarPaciente(string pacienteJSON)
+        public static bool GuardarEstudio(string pacienteJSON, string estudioJSON)
         {
+            Fachada fachada = Fachada.getFachada();
             try
             {
                 clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);
-                Fachada fachada = Fachada.getFachada();
-                fachada.agregar_paciente(paciente);
-
-                return true;
+                if (fachada.agregar_paciente(paciente))
+                {
+                    clsEstudio estudio = JsonConvert.DeserializeObject<clsEstudio>(estudioJSON);
+                    if (fachada.agregar_estudio(estudio))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        fachada.eliminar_paciente(paciente);
+                        return false;
+                    }
+                }
+                return false;
             }
             catch (Exception)
             {
