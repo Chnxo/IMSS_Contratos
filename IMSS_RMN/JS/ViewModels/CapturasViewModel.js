@@ -37,6 +37,7 @@ var GuardarEstudio = function () {
         dataType: "json",
         success: function (data) {
             if (data.d) {
+                LimpiarCampos();
                 viewModel.alertMessage("Estudio agregado correctamente.");
                 $('#alertModal').modal('show');
             } else {
@@ -49,4 +50,18 @@ var GuardarEstudio = function () {
             $('#alertModal').modal('show');
         }
     });
+};
+
+var LimpiarCampos = function () {
+    viewModel.Estudio.Fecha_sol("");
+    viewModel.Estudio.Fecha_rea("");
+    viewModel.Paciente.Nombre("");
+    viewModel.Paciente.Ape_pat("");
+    viewModel.Paciente.Ape_mat("");
+    viewModel.Paciente.Afiliacion("");
+    // falta Agregado
+    viewModel.Paciente.Num_tel("");
+    viewModel.TipoEstudio(undefined);
+    viewModel.Prioridad(undefined);
+    viewModel.Estudio.Observacion("");
 };

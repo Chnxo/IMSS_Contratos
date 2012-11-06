@@ -47,7 +47,7 @@ namespace IMSS_RMN
                     }
                     else
                     {
-                        fachada.eliminar_paciente(paciente);
+                        fachada.eliminar_paciente(fk_afiliacion);
                         return false;
                     }
                 }

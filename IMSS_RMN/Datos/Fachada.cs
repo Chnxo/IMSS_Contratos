@@ -191,9 +191,7 @@ namespace IMSS_RMN.Datos
                 paciente[3] = pac.Nombre;
                 paciente[4] = pac.Num_tel;
 
-                //SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
-                int ID = Convert.ToInt32(SqlHelper.ExecuteScalar(connString, "agr_pac_RMN", paciente));
-                return ID;
+                return Convert.ToInt32(SqlHelper.ExecuteScalar(connString, "agr_pac_RMN", paciente));                
             }
             catch (Exception)
             {
@@ -206,7 +204,7 @@ namespace IMSS_RMN.Datos
             throw new NotImplementedException();
         }
 
-        public bool eliminar_paciente(clsPaciente pac)
+        public bool eliminar_paciente(int id)
         {
             throw new NotImplementedException();
         }
