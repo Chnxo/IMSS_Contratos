@@ -14,11 +14,12 @@ $(function () {
 
             // Helpers
             viewModel.alertMessage = ko.observable("");
+            viewModel.TipoEstudio = ko.observable();
+            viewModel.Prioridad = ko.observable();
 
             ko.applyBindings(viewModel);
         },
         error: function (error) {
-            alert("D:");
         }
     });
 });
@@ -26,6 +27,8 @@ $(function () {
 var GuardarEstudio = function () {
     var paciente = ko.mapping.toJS(viewModel.Paciente);
     var estudio = ko.mapping.toJS(viewModel.Estudio);
+    estudio.Fk_pri_id = viewModel.Prioridad().Pri_id();
+    estudio.Fk_tipo_id = viewModel.TipoEstudio().Id_tip_est();
     $.ajax({
         type: "POST",
         url: "Capturas.aspx/GuardarEstudio",
@@ -34,31 +37,16 @@ var GuardarEstudio = function () {
         dataType: "json",
         success: function (data) {
             if (data.d) {
-                viewModel.alertMessage("Usuario agregado correctamente.");
+                viewModel.alertMessage("Estudio agregado correctamente.");
                 $('#alertModal').modal('show');
             } else {
-                viewModel.alertMessage("Usuario no agregado.");
+                viewModel.alertMessage("Estudio no agregado.");
                 $('#alertModal').modal('show');
             }
         },
         error: function (error) {
             viewModel.alertMessage("No se pudo establecer conexión con el servidor.");
             $('#alertModal').modal('show');
-        }
-    });
-};
-
-var TestGA = function () {
-    $.ajax({
-        type: "POST",
-        url: "Capturas.aspx/TestGetAll",
-        data: {},
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-            alert("chancho pancho");
-        },
-        error: function (error) {
         }
     });
 };

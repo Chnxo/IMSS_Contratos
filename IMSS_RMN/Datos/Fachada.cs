@@ -45,24 +45,23 @@ namespace IMSS_RMN.Datos
             {
                 return false;
             }
-            
         }
 
         public List<clsEstudio> allEstudios()
         {
             List<clsEstudio> estudios = new List<clsEstudio>();
             DataTable dt = SqlHelper.ExecuteDataset(connString, "all_estudios_RMN").Tables[0];
-            
+
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                clsEstudio estu = new clsEstudio();
-                estu.Fecha_sol = dt.Rows[i]["Est_Fecha_sol"].ToString();
-                estu.Fecha_rea = dt.Rows[i]["Est_Fecha_rea"].ToString();
-                estu.Observacion = dt.Rows[i]["Est_Observaciones"].ToString();
-                estu.Fk_tipo_id = Convert.ToInt32(dt.Rows[i]["Fk_Tipo_Id"]);
-                estu.Fk_pri_id = Convert.ToInt32(dt.Rows[i]["Fk_Pri_Id"]);
-                estu.Fk_Afiliacion = dt.Rows[i]["Fk_Pac_Afiliacion"].ToString();
-                estudios.Add(estu);
+                clsEstudio estudio = new clsEstudio();
+                estudio.Fecha_sol = dt.Rows[i]["Est_Fecha_sol"].ToString();
+                estudio.Fecha_rea = dt.Rows[i]["Est_Fecha_rea"].ToString();
+                estudio.Observacion = dt.Rows[i]["Est_Observaciones"].ToString();
+                estudio.Fk_tipo_id = Convert.ToInt32(dt.Rows[i]["Fk_Tipo_Id"]);
+                estudio.Fk_pri_id = Convert.ToInt32(dt.Rows[i]["Fk_Pri_Id"]);
+                estudio.Fk_Afiliacion = dt.Rows[i]["Fk_Pac_Afiliacion"].ToString();
+                estudios.Add(estudio);
             }
 
             return estudios;
@@ -126,7 +125,16 @@ namespace IMSS_RMN.Datos
 
         public List<clsPrioridad> getPrioridades()
         {
-            throw new NotImplementedException();
+            List<clsPrioridad> prioridades = new List<clsPrioridad>();
+            DataTable dt = SqlHelper.ExecuteDataset(connString, "all_tip_prioridad_RMN").Tables[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                clsPrioridad prioridad = new clsPrioridad();
+                prioridad.Pri_id = Convert.ToInt32(dt.Rows[i]["Pri_Id"]);
+                prioridad.Cal_Nombre = dt.Rows[i]["Pri_Nombre"].ToString();
+                prioridades.Add(prioridad);
+            }
+            return prioridades;
         }
 
         public void modificar_prioridad(clsPrioridad prio)
@@ -150,7 +158,17 @@ namespace IMSS_RMN.Datos
 
         public List<clsTipoEstudio> getTiposEstudios()
         {
-            throw new NotImplementedException();
+            List<clsTipoEstudio> tipoEstudios = new List<clsTipoEstudio>();
+            DataTable dt = SqlHelper.ExecuteDataset(connString, "all_tip_est_RMN").Tables[0];
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                clsTipoEstudio tipoEstudio = new clsTipoEstudio();
+                tipoEstudio.Id_tip_est = Convert.ToInt32(dt.Rows[i]["Tip_Est_Id"]);
+                tipoEstudio.Tip_est_nombre = dt.Rows[i]["Tip_Est_Nombre"].ToString();
+                tipoEstudio.Costo = Convert.ToDecimal(dt.Rows[i]["Tip_Est_Costo"]);
+                tipoEstudios.Add(tipoEstudio);
+            }
+            return tipoEstudios;
         }
 
         public void modificar_tipo_estudio(clsTipoEstudio tp)
@@ -162,7 +180,7 @@ namespace IMSS_RMN.Datos
 
         #region *Métodos de la classe Paciente*
 
-        public bool agregar_paciente(clsPaciente pac)
+        public int agregar_paciente(clsPaciente pac)
         {
             try
             {
@@ -173,22 +191,22 @@ namespace IMSS_RMN.Datos
                 paciente[3] = pac.Nombre;
                 paciente[4] = pac.Num_tel;
 
-                SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
-                return true;
+                //SqlHelper.ExecuteNonQuery(connString, "agr_pac_RMN", paciente);
+                int ID = Convert.ToInt32(SqlHelper.ExecuteScalar(connString, "agr_pac_RMN", paciente));
+                return ID;
             }
             catch (Exception)
             {
-                return false;
+                return 0;
             }
-            
         }
 
-        public bool eliminar_paciente(clsPaciente pac)
+        public List<clsPaciente> allPacientes()
         {
             throw new NotImplementedException();
         }
 
-        public List<clsPaciente> allPacientes()
+        public bool eliminar_paciente(clsPaciente pac)
         {
             throw new NotImplementedException();
         }

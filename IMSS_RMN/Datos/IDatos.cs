@@ -38,7 +38,7 @@ public interface IDatos
     #endregion
 
     #region *Pacientes RMN*
-    bool agregar_paciente(clsPaciente pac);
+    int agregar_paciente(clsPaciente pac);
     bool eliminar_paciente(clsPaciente pac);
     void modificar_paciente(clsPaciente paci);
     List<clsPaciente> allPacientes();

@@ -12,14 +12,14 @@ namespace IMSS_RMN.ViewModels
             Paciente = new clsPaciente();
             Presupuesto = new clsPresupuesto();
             Estudio = new clsEstudio();
-            TipoEstudio = new clsTipoEstudio();
-            Prioridad = new clsPrioridad();
+            TipoEstudios = new List<clsTipoEstudio>();
+            Prioridades = new List<clsPrioridad>();
         }
 
         public clsPaciente Paciente { get; set; }
         public clsPresupuesto Presupuesto { get; set; }
         public clsEstudio Estudio { get; set; }
-        public clsTipoEstudio TipoEstudio { get; set; }
-        public clsPrioridad Prioridad { get; set; }
+        public List<clsTipoEstudio> TipoEstudios { get; set; }
+        public List<clsPrioridad> Prioridades { get; set; }
     }
 }

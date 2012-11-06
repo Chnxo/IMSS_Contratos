@@ -4,20 +4,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style type="text/css">
-        label
-        {
-            display: block;
-        }
-        .validationMessage
-        {
-            color: Red;
-        }
-        .customMessage
-        {
-            color: Orange;
-        }
-        ​</style>
     <h4 class="centrado">
         Control de pacientes con subrogación de estudio de Resonacia Magnética Nuclear</h4>
     <div>
@@ -69,7 +55,6 @@
                     <div class="controls">
                         <asp:TextBox data-bind="value: Paciente.Nombre" ID="nombrePaciente" runat="server"
                             class="input-medium"></asp:TextBox>
-                        <%--<span class="validationMessage" style="display:none;"></span>--%>
                     </div>
                 </h2>
                 <h2>
@@ -115,8 +100,7 @@
                     <label class="control-label">
                         Tipo de Estudio</label>
                     <div class="controls">
-                        <asp:DropDownList ID="tipoEstudio" runat="server" class="input-xlarge">
-                            <asp:ListItem>Extremidades Simple y Contrastada</asp:ListItem>
+                        <asp:DropDownList ID="tipoEstudio" runat="server" class="input-xlarge" data-bind="options: TipoEstudios, optionsText: 'Tip_est_nombre', value: TipoEstudio, optionsCaption: 'Selecciona un Tipo...'">
                         </asp:DropDownList>
                     </div>
                 </h2>
@@ -124,8 +108,7 @@
                     <label class="control-label">
                         Prioridad del Estudio</label>
                     <div class="controls">
-                        <asp:DropDownList ID="prioridadEstudio" runat="server" class="input-medium">
-                            <asp:ListItem>Urgente</asp:ListItem>
+                        <asp:DropDownList ID="prioridadEstudio" runat="server" class="input-xlarge" data-bind="options: Prioridades, optionsText: 'Cal_Nombre', value: Prioridad, optionsCaption: 'Selecciona una Prioridad...'">
                         </asp:DropDownList>
                     </div>
                 </h2>
@@ -137,11 +120,11 @@
                     </div>
                 </h2>
                 <h2 class="centrado">
-                    <asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio" class="btn btn-primary"
+                    <button class="btn btn-primary" data-bind="click: GuardarEstudio"><i class="icon-ok icon-white"></i> Agregar Datos del Estudio</button>
+                    <button class="btn"><i class="icon-pencil"></i> Modificar Datos</button>
+                    <%--<asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio"  class="btn btn-primary"
                         data-bind="click: GuardarEstudio" />
-                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />
-                    <asp:Button ID="Button1" runat="server" Text="Test Get All" class="btn" 
-                        data-bind="click: TestGA"/>
+                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />--%>
                 </h2>
             </div>
         </div>
