@@ -34,7 +34,7 @@
                         <label class="control-label">
                             Fecha de Solicitud</label>
                         <div class="controls">
-                            <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium"></asp:TextBox>
+                            <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_sol"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -43,7 +43,7 @@
                         <label class="control-label">
                             Fecha de Realización</label>
                         <div class="controls">
-                            <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium"></asp:TextBox>
+                            <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_rea"></asp:TextBox>
                         </div>
                     </h2>
                 </div>
@@ -116,7 +116,7 @@
                     <label class="control-label">
                         Observaciones</label>
                     <div class="controls">
-                        <textarea rows="3" class="input-large"></textarea>
+                        <textarea rows="3" class="input-large" data-bind="value: Estudio.Observacion"></textarea>
                     </div>
                 </h2>
                 <h2 class="centrado">

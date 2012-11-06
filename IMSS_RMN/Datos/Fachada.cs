@@ -30,7 +30,7 @@ namespace IMSS_RMN.Datos
         {
             try
             {
-                object[] estudio = new object[5];
+                object[] estudio = new object[6];
                 estudio[0] = est.Fecha_sol;
                 estudio[1] = est.Fecha_rea;
                 estudio[2] = est.Observacion;

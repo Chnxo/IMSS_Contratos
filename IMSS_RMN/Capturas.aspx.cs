@@ -37,7 +37,7 @@ namespace IMSS_RMN
             {
                 clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);
                 int fk_afiliacion = fachada.agregar_paciente(paciente);
-                if (fk_afiliacion != 0)
+                if (fk_afiliacion > 0)
                 {
                     clsEstudio estudio = JsonConvert.DeserializeObject<clsEstudio>(estudioJSON);
                     estudio.Fk_Afiliacion = fk_afiliacion.ToString();
