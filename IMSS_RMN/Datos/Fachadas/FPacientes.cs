@@ -34,7 +34,16 @@ namespace IMSS_RMN.Datos.Fachadas
 
         public bool eliminar_paciente(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "eli_paciente", id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public void modificar_paciente(clsPaciente paci)
