@@ -10,20 +10,20 @@ using IMSS_RMN.Datos;
 using IMSS_RMN.ViewModels;
 using Newtonsoft.Json;
 using IMSS_RMN.Datos.Interfaces;
+using IMSS_RMN.Datos.Fachadas;
 
 namespace IMSS_RMN
 {
     public partial class Capturas : System.Web.UI.Page
     {
-        static IPrioridad iPrioridad;
-        static ITiposEstudios iTiposEstudios;
-        static IPacientes iPacientes;
-        static IEstudio iEstudio;
+        static IPrioridad iPrioridad = new FPrioridad();
+        static ITiposEstudios iTiposEstudios = new FTiposEstudios();
+        static IPacientes iPacientes = new FPacientes();
+        static IEstudio iEstudio = new FEstudio();
 
         [WebMethod]
         public static CapturasViewModel CargarViewModel()
         {
-            Conexion fachada = Conexion.getFachada();
             CapturasViewModel cvm = new CapturasViewModel();
             try
             {
@@ -38,7 +38,6 @@ namespace IMSS_RMN
         [WebMethod]
         public static bool GuardarEstudio(string pacienteJSON, string estudioJSON)
         {
-            //Conexion fachada = Conexion.getFachada();
             try
             {
                 clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);

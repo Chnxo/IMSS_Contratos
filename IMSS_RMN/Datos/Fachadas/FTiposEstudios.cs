@@ -22,7 +22,7 @@ namespace IMSS_RMN.Datos.Fachadas
         public List<clsTipoEstudio> getTiposEstudios()
         {
             List<clsTipoEstudio> tipoEstudios = new List<clsTipoEstudio>();
-            DataTable dt = SqlHelper.ExecuteDataset(Conexion.connString, "all_tip_est_RMN").Tables[0];
+            DataTable dt = SqlHelper.ExecuteDataset(SqlHelper.connString, "all_tip_est_RMN").Tables[0];
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 clsTipoEstudio tipoEstudio = new clsTipoEstudio();
