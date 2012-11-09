@@ -36,6 +36,9 @@ namespace IMSS_RMN.Datos
         /// </summary>
     public sealed class SqlHelper
     {
+        public static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        //public static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
+
         #region private utility methods & constructors
 
         // Since this class provides only static methods, make the default constructor private to prevent 

@@ -123,7 +123,21 @@
     <Compile Include="Capturas.aspx.designer.cs">
       <DependentUpon>Capturas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Fachada.cs" />
+    <Compile Include="Datos\Conexion.cs" />
+    <Compile Include="Datos\Fachadas\FAdministrador.cs" />
+    <Compile Include="Datos\Fachadas\FCapturista.cs" />
+    <Compile Include="Datos\Fachadas\FEstudio.cs" />
+    <Compile Include="Datos\Fachadas\FPacientes.cs" />
+    <Compile Include="Datos\Fachadas\FPresupuesto.cs" />
+    <Compile Include="Datos\Fachadas\FPrioridad.cs" />
+    <Compile Include="Datos\Fachadas\FTiposEstudios.cs" />
+    <Compile Include="Datos\Interfaces\IAdministrador.cs" />
+    <Compile Include="Datos\Interfaces\ICapturista.cs" />
+    <Compile Include="Datos\Interfaces\IEstudio.cs" />
+    <Compile Include="Datos\Interfaces\IPacientes.cs" />
+    <Compile Include="Datos\Interfaces\IPresupuesto.cs" />
+    <Compile Include="Datos\Interfaces\IPrioridad.cs" />
+    <Compile Include="Datos\Interfaces\ITiposEstudios.cs" />
     <Compile Include="Datos\SQLHelper.cs" />
     <Compile Include="Dominio\Administrador.cs" />
     <Compile Include="Dominio\Capturista.cs" />

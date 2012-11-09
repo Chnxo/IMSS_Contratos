@@ -6,18 +6,18 @@ using System.Web;
 
 namespace IMSS_RMN.Datos
 {
-    public sealed class Fachada : IDatos
+    public sealed class Conexion : IDatos
     {
-        private static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
-        private static Fachada laFachada = new Fachada();
+        public static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        private static Conexion laFachada = new Conexion();
 
-        //private static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
+        //public static string connString = "Data Source=EMELITH-HP;Initial Catalog=EjemploIMSS;Integrated Security=True";
 
-        public Fachada()
+        public Conexion()
         {
         }
 
-        public static Fachada getFachada()
+        public static Conexion getFachada()
         {
             return laFachada;
         }
