@@ -16,7 +16,13 @@ public class clsEstudio
     private int fk_tipo_id;
     private int fk_pri_id;
     private string fk_afiliacion;
+    private int id;
 
+    public int Id
+    {
+        get { return id; }
+        set { id = value; }
+    }
 
     #region *Campos Encapsulados*
 

@@ -27,17 +27,19 @@ $(function () {
 var GuardarEstudio = function () {
     var paciente = ko.mapping.toJS(viewModel.Paciente);
     var estudio = ko.mapping.toJS(viewModel.Estudio);
+    var presupuesto = ko.mapping.toJS(viewModel.Presupuesto);
     estudio.Fk_pri_id = viewModel.Prioridad().Pri_id();
     estudio.Fk_tipo_id = viewModel.TipoEstudio().Id_tip_est();
     $.ajax({
         type: "POST",
         url: "Capturas.aspx/GuardarEstudio",
-        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "', 'estudioJSON':'" + ko.mapping.toJSON(estudio) + "'}",
+        data: "{'pacienteJSON':'" + ko.mapping.toJSON(paciente) + "', 'estudioJSON':'" + ko.mapping.toJSON(estudio) + "', 'presupuestoJSON':'" + ko.mapping.toJSON(presupuesto) + "', 'costo':'" + viewModel.TipoEstudio().Costo() + "'}",
         contentType: "application/json",
         dataType: "json",
         success: function (data) {
-            if (data.d) {
+            if (data.d > 0) {
                 LimpiarCampos();
+                viewModel.Presupuesto.Monto(data.d);
                 viewModel.alertMessage("Estudio agregado correctamente.");
                 $('#alertModal').modal('show');
             } else {

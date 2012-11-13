@@ -14,7 +14,8 @@
                         <label class="control-label">
                             Núm. Contrato</label>
                         <div class="controls">
-                            <asp:TextBox ID="numContrato" runat="server" class="input-mini"></asp:TextBox>
+                            <%--<asp:TextBox ID="numContrato" runat="server" class="input-mini"></asp:TextBox>--%>
+                            <p class="lead" data-bind="text: Presupuesto.Num_contrato" ></p>
                         </div>
                     </h2>
                 </div>
@@ -23,7 +24,8 @@
                         <label class="control-label">
                             Presupuesto</label>
                         <div class="controls">
-                            <asp:TextBox ID="presupuesto" runat="server" class="input-medium"></asp:TextBox>
+                            <%--<asp:TextBox ID="presupuesto" runat="server" class="input-medium"></asp:TextBox>--%>
+                            <p class="lead" data-bind="text: Presupuesto.Monto" ></p>
                         </div>
                     </h2>
                 </div>

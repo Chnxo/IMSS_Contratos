@@ -11,6 +11,10 @@ namespace IMSS_RMN.Datos.Interfaces
 
         void eliminar_presupuesto(int clave_pre);
 
+        decimal actualizarPresupuesto(clsPresupuesto presupuesto, decimal costo);
+
+        clsPresupuesto getPresupuesto();
+
         List<clsPresupuesto> getPresupuestos();
 
         void modificar_presupuesto(clsPresupuesto pres);

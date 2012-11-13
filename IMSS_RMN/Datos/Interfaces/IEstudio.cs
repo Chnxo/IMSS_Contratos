@@ -7,9 +7,11 @@ namespace IMSS_RMN.Datos.Interfaces
 {
     public interface IEstudio
     {
-        bool agregar_estudio(clsEstudio est);
+        int agregar_estudio(clsEstudio est);
 
         List<clsEstudio> allEstudios();
+
+        void eliminar_estudio(int ID);
 
         List<clsEstudio> getEstudios();
 

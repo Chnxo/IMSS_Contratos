@@ -9,7 +9,7 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FEstudio : IEstudio
     {
-        public bool agregar_estudio(clsEstudio est)
+        public int agregar_estudio(clsEstudio est)
         {
             try
             {
@@ -21,12 +21,13 @@ namespace IMSS_RMN.Datos.Fachadas
                 estudio[4] = est.Fk_pri_id;
                 estudio[5] = est.Fk_Afiliacion;
 
-                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_est_RMN", estudio);
-                return true;
+                return Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.connString, "agr_est_RMN", estudio));
+                //SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_est_RMN", estudio);
+                //return 1;
             }
             catch (Exception)
             {
-                return false;
+                return 0;
             }
         }
 
@@ -56,6 +57,12 @@ namespace IMSS_RMN.Datos.Fachadas
         }
 
         public void modificar_estudio(clsEstudio estu)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void eliminar_estudio(int ID)
         {
             throw new NotImplementedException();
         }

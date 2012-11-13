@@ -8,18 +8,48 @@ using System.Web;
 /// </summary>
 public class clsPresupuesto
 {
+    private int ano;
+    private string concepto;
+    private int id;
+    private decimal monto;
+    private int num_contrato;
     private int num_pres;
     private int partida;
-    private int num_contrato;
-    private string concepto;
-    private int ano;
-    private decimal monto;
     private string vigencia;
 
-    
-    
+   
 
     #region *Campos Encapsulados*
+
+    public int Ano
+    {
+        get { return ano; }
+        set { ano = value; }
+    }
+
+    public string Concepto
+    {
+        get { return concepto; }
+        set { concepto = value; }
+    }
+
+    public int ID
+    {
+        get { return id; }
+        set { id = value; }
+    }
+
+    public decimal Monto
+    {
+        get { return monto; }
+        set { monto = value; }
+    }
+
+    public int Num_contrato
+    {
+        get { return num_contrato; }
+        set { num_contrato = value; }
+    }
 
     public int Num_pres
     {
@@ -33,43 +63,19 @@ public class clsPresupuesto
         set { partida = value; }
     }
 
-    public int Num_contrato
-    {
-        get { return num_contrato; }
-        set { num_contrato = value; }
-    }
-
-    public string Concepto
-    {
-        get { return concepto; }
-        set { concepto = value; }
-    }
-   
-    public int Ano
-    {
-        get { return ano; }
-        set { ano = value; }
-    } 
-
-    public decimal Monto
-    {
-        get { return monto; }
-        set { monto = value; }
-    }
-
     public string Vigencia
     {
         get { return vigencia; }
         set { vigencia = value; }
     }
 
-    #endregion
+    #endregion *Campos Encapsulados*
 
     #region *Constructores*
 
     public clsPresupuesto()
-	{
-	}
+    {
+    }
 
     public clsPresupuesto(int num_pres, int partida, int num_contrato, string concepto, int ano, decimal monto)
     {
@@ -81,7 +87,7 @@ public class clsPresupuesto
         this.monto = monto;
     }
 
-    public clsPresupuesto(int partida, int num_contrato, string concepto, int ano, decimal monto,string vigencia)
+    public clsPresupuesto(int partida, int num_contrato, string concepto, int ano, decimal monto, string vigencia)
     {
         this.partida = partida;
         this.num_contrato = num_contrato;
@@ -90,16 +96,17 @@ public class clsPresupuesto
         this.monto = monto;
         this.vigencia = vigencia;
     }
+
     public clsPresupuesto(decimal monto)
     {
         this.monto = monto;
     }
 
-    public clsPresupuesto(int ano,decimal monto)
+    public clsPresupuesto(int ano, decimal monto)
     {
         this.ano = ano;
         this.monto = monto;
     }
 
-    #endregion
+    #endregion *Constructores*
 }

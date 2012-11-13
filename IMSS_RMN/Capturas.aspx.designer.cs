@@ -13,24 +13,6 @@ namespace IMSS_RMN {
     public partial class Capturas {
         
         /// <summary>
-        /// numContrato control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox numContrato;
-        
-        /// <summary>
-        /// presupuesto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox presupuesto;
-        
-        /// <summary>
         /// fechaSolicitud control.
         /// </summary>
         /// <remarks>
