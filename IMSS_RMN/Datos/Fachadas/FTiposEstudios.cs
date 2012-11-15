@@ -9,6 +9,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FTiposEstudios:ITiposEstudios
     {
+        private static FTiposEstudios ftiposestudios = new FTiposEstudios();
+
+        private FTiposEstudios()
+        {
+
+        }
+
+        public static FTiposEstudios Instancia()
+        {
+            return ftiposestudios;
+        }
+
         public void agregar_tipo_estudio(clsTipoEstudio nTipo)
         {
             throw new NotImplementedException();

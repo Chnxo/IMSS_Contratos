@@ -8,6 +8,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FPacientes:IPacientes
     {
+        private static FPacientes fpacientes = new FPacientes();
+
+        private FPacientes()
+        {
+
+        }
+
+        public static FPacientes Instancia()
+        {
+            return fpacientes;
+        }
+
         public int agregar_paciente(clsPaciente pac)
         {
             try

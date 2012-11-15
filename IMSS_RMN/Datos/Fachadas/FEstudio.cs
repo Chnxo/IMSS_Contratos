@@ -9,6 +9,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FEstudio : IEstudio
     {
+        private static FEstudio festudio = new FEstudio();
+
+        private FEstudio()
+        {
+                
+        }
+
+        public static FEstudio Instancia()
+        {
+            return festudio;
+        }
+
         public int agregar_estudio(clsEstudio est)
         {
             try

@@ -9,6 +9,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FPresupuesto : IPresupuesto
     {
+        private static FPresupuesto fpresupuesto = new FPresupuesto();
+
+        private FPresupuesto()
+        {
+
+        }
+
+        public static FPresupuesto Instancia()
+        {
+            return fpresupuesto;
+        }
+
         public decimal actualizarPresupuesto(clsPresupuesto presupuesto, decimal costo)
         {
             try

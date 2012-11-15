@@ -16,11 +16,11 @@ namespace IMSS_RMN
 {
     public partial class Capturas : System.Web.UI.Page
     {
-        private static IEstudio iEstudio = new FEstudio();
-        private static IPacientes iPacientes = new FPacientes();
-        private static IPresupuesto iPresupuesto = new FPresupuesto();
-        private static IPrioridad iPrioridad = new FPrioridad();
-        private static ITiposEstudios iTiposEstudios = new FTiposEstudios();
+        //private static IEstudio iEstudio = new FEstudio();
+        //private static IPacientes iPacientes = new FPacientes();
+        //private static IPresupuesto iPresupuesto = new FPresupuesto();
+        //private static IPrioridad iPrioridad = new FPrioridad();
+        //private static ITiposEstudios iTiposEstudios = new FTiposEstudios();
 
         [WebMethod]
         public static CapturasViewModel CargarViewModel()
@@ -28,9 +28,9 @@ namespace IMSS_RMN
             CapturasViewModel cvm = new CapturasViewModel();
             try
             {
-                cvm.Presupuesto = iPresupuesto.getPresupuesto();
-                cvm.Prioridades = iPrioridad.getPrioridades();
-                cvm.TipoEstudios = iTiposEstudios.getTiposEstudios();
+                cvm.Presupuesto = FPresupuesto.Instancia().getPresupuesto();//iPresupuesto.getPresupuesto();
+                cvm.Prioridades = FPrioridad.Instancia().getPrioridades();//iPrioridad.getPrioridades();
+                cvm.TipoEstudios = FTiposEstudios.Instancia().getTiposEstudios();//iTiposEstudios.getTiposEstudios();
             }
             catch { }
 
@@ -43,27 +43,27 @@ namespace IMSS_RMN
             try
             {
                 clsPaciente paciente = JsonConvert.DeserializeObject<clsPaciente>(pacienteJSON);
-                int fk_afiliacion = iPacientes.agregar_paciente(paciente);
+                int fk_afiliacion = FPacientes.Instancia().agregar_paciente(paciente);//iPacientes.agregar_paciente(paciente);
                 if (fk_afiliacion > 0)
                 {
                     clsEstudio estudio = JsonConvert.DeserializeObject<clsEstudio>(estudioJSON);
                     estudio.Fk_Afiliacion = fk_afiliacion.ToString();
-                    int idEstudio = iEstudio.agregar_estudio(estudio);
+                    int idEstudio = FEstudio.Instancia().agregar_estudio(estudio);//iEstudio.agregar_estudio(estudio);
                     if (idEstudio > 0)
                     {
                         clsPresupuesto presupuesto = JsonConvert.DeserializeObject<clsPresupuesto>(presupuestoJSON);
-                        decimal nuevoMonto = iPresupuesto.actualizarPresupuesto(presupuesto, Convert.ToDecimal(costo));
+                        decimal nuevoMonto = FPresupuesto.Instancia().actualizarPresupuesto(presupuesto, Convert.ToDecimal(costo));//iPresupuesto.actualizarPresupuesto(presupuesto, Convert.ToDecimal(costo));
                         if (nuevoMonto == 0.0M)
                         {
-                            iEstudio.eliminar_estudio(idEstudio);
-                            iPacientes.eliminar_paciente(fk_afiliacion);
-                            
+                            FEstudio.Instancia().eliminar_estudio(idEstudio);//iEstudio.eliminar_estudio(idEstudio);
+                            FPacientes.Instancia().eliminar_paciente(fk_afiliacion);//iPacientes.eliminar_paciente(fk_afiliacion);
+
                         }
                         return nuevoMonto;
                     }
                     else
                     {
-                        iPacientes.eliminar_paciente(fk_afiliacion);
+                        FPacientes.Instancia().eliminar_paciente(fk_afiliacion);//iPacientes.eliminar_paciente(fk_afiliacion);
                         return 0.0M;
                     }
                 }
@@ -73,6 +73,7 @@ namespace IMSS_RMN
             {
                 return 0.0M;
             }
+
         }
 
         protected void Page_Load(object sender, EventArgs e)

@@ -9,6 +9,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FPrioridad:IPrioridad
     {
+        private static FPrioridad fprioridad = new FPrioridad();
+
+        private FPrioridad()
+        {
+
+        }
+
+        public static FPrioridad Instancia()
+        {
+            return fprioridad;
+        }
+
         public void agregar_Prioridad(clsPrioridad pri)
         {
             throw new NotImplementedException();

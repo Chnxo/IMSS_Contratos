@@ -8,6 +8,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FAdministrador:IAdministrador
     {
+        private static FAdministrador fadministrador = new FAdministrador();
+        
+        private FAdministrador()
+        {
+
+        }
+
+        public static FAdministrador Instancia()
+        {
+            return fadministrador;
+        }
+
         public void agregar_administrador(Administrador adm)
         {
             throw new NotImplementedException();

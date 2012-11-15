@@ -8,6 +8,18 @@ namespace IMSS_RMN.Datos.Fachadas
 {
     public class FCapturista:ICapturista
     {
+        private static FCapturista fcapturista = new FCapturista();
+
+        private FCapturista()
+        {
+
+        }
+
+        public static FCapturista Insatancia()
+        {
+            return fcapturista;
+        }
+
         public void agregar_capturista(Capturista cap)
         {
             throw new NotImplementedException();
