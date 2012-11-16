@@ -59,6 +59,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdmonPresupuesto.aspx" />
+    <Content Include="AdmonPrioridades.aspx" />
+    <Content Include="AdmonTiposEstudios.aspx" />
     <Content Include="bootstrap\css\bootstrap-responsive.css" />
     <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -106,6 +109,7 @@
     <Content Include="JS\Knockout\knockout.validation.js" />
     <Content Include="JS\Knockout\knockout.validation.min.js" />
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
+    <Content Include="JS\ViewModels\PresupuestoViewModel.js" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -116,6 +120,27 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdmonPresupuesto.aspx.cs">
+      <DependentUpon>AdmonPresupuesto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmonPresupuesto.aspx.designer.cs">
+      <DependentUpon>AdmonPresupuesto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmonPrioridades.aspx.cs">
+      <DependentUpon>AdmonPrioridades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmonPrioridades.aspx.designer.cs">
+      <DependentUpon>AdmonPrioridades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdmonTiposEstudios.aspx.cs">
+      <DependentUpon>AdmonTiposEstudios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmonTiposEstudios.aspx.designer.cs">
+      <DependentUpon>AdmonTiposEstudios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Capturas.aspx.cs">
       <DependentUpon>Capturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

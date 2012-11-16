@@ -45,9 +45,9 @@
                                     <li class="dropdown"><a id="admins" role="button" class="dropdown-toggle" data-toggle="dropdown"
                                         href="#">Administradores<b class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="admins">
-                                            <li><a href="#">Admón. Del Presupuesto</a></li>
-                                            <li><a href="#">Admón. de Tipos de Estudios</a></li>
-                                            <li><a href="#">Admón. de Prioridad</a></li>
+                                            <li><a href="AdmonPresupuesto.aspx">Admón. Del Presupuesto</a></li>
+                                            <li><a href="AdmonTiposEstudios.aspx">Admón. de Tipos de Estudios</a></li>
+                                            <li><a href="AdmonPrioridades.aspx">Admón. de Prioridad</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Reportes</a></li>
