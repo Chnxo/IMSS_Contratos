@@ -2,6 +2,9 @@
 var viewModel;
 
 $(function () {
+    //    $('#fSolicitud').datepicker();
+    $('#fSolicitud').datepicker();
+    $('#fRealizacion').datepicker();
     $.ajax({
         type: "POST",
         url: "Capturas.aspx/CargarViewModel",

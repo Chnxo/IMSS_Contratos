@@ -14,8 +14,8 @@
                         <label class="control-label">
                             Núm. Contrato</label>
                         <div class="controls">
-                            <%--<asp:TextBox ID="numContrato" runat="server" class="input-mini"></asp:TextBox>--%>
-                            <p class="lead" data-bind="text: Presupuesto.Num_contrato" ></p>
+                            <p class="lead" data-bind="text: Presupuesto.Num_contrato">
+                            </p>
                         </div>
                     </h2>
                 </div>
@@ -24,8 +24,8 @@
                         <label class="control-label">
                             Presupuesto</label>
                         <div class="controls">
-                            <%--<asp:TextBox ID="presupuesto" runat="server" class="input-medium"></asp:TextBox>--%>
-                            <p class="lead" data-bind="text: Presupuesto.Monto" ></p>
+                            <p class="lead" data-bind="text: Presupuesto.Monto">
+                            </p>
                         </div>
                     </h2>
                 </div>
@@ -36,7 +36,11 @@
                         <label class="control-label">
                             Fecha de Solicitud</label>
                         <div class="controls">
-                            <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_sol"></asp:TextBox>
+                            <div class="input-prepend date" id="fSolicitud" data-date="" data-date-format="dd-mm-yyyy">
+                                <span class="add-on pull-left"><i class="icon-calendar"></i></span>
+                                <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_sol"
+                                    ReadOnly="true"></asp:TextBox>
+                            </div>
                         </div>
                     </h2>
                 </div>
@@ -45,7 +49,11 @@
                         <label class="control-label">
                             Fecha de Realización</label>
                         <div class="controls">
-                            <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_rea"></asp:TextBox>
+                            <div class="input-prepend date" id="fRealizacion" data-date="" data-date-format="dd-mm-yyyy">
+                                <span class="add-on pull-left"><i class="icon-calendar"></i></span>
+                                <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_rea"
+                                    ReadOnly="true"></asp:TextBox>
+                            </div>
                         </div>
                     </h2>
                 </div>
@@ -122,8 +130,10 @@
                     </div>
                 </h2>
                 <h2 class="centrado">
-                    <button class="btn btn-primary" data-bind="click: GuardarEstudio"><i class="icon-ok icon-white"></i> Agregar Datos del Estudio</button>
-                    <button class="btn"><i class="icon-pencil"></i> Modificar Datos</button>
+                    <button class="btn btn-primary" data-bind="click: GuardarEstudio">
+                        <i class="icon-ok icon-white"></i>Agregar Datos del Estudio</button>
+                    <button class="btn">
+                        <i class="icon-pencil"></i>Modificar Datos</button>
                     <%--<asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio"  class="btn btn-primary"
                         data-bind="click: GuardarEstudio" />
                     <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />--%>
