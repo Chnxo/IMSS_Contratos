@@ -110,6 +110,7 @@
     <Content Include="JS\Knockout\knockout.validation.min.js" />
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
     <Content Include="JS\ViewModels\PresupuestoViewModel.js" />
+    <Content Include="JS\ViewModels\PrioridadViewModel.js" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -194,6 +195,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CapturasViewModel.cs" />
+    <Compile Include="ViewModels\PrioridadViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MP_Principal.Master" />
