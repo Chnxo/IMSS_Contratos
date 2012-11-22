@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4 class="centrado">
-        Control de pacientes con subrogación de estudio de Resonacia Magnética Nuclear</h4>
+        Control de pacientes con subrogación de estudio de Resonancia Magnética Nuclear</h4>
     <div>
         <div class="form-horizontal">
             <div class="row-fluid">
@@ -77,7 +77,7 @@
                 </h2>
                 <h2>
                     <label class="control-label">
-                        Fecha de Materno</label>
+                        Apellido Materno</label>
                     <div class="controls">
                         <asp:TextBox data-bind="value: Paciente.Ape_mat" ID="apellidoMaterno" runat="server"
                             class="input-medium"></asp:TextBox>
@@ -131,9 +131,9 @@
                 </h2>
                 <h2 class="centrado">
                     <button class="btn btn-primary" data-bind="click: GuardarEstudio">
-                        <i class="icon-ok icon-white"></i>Agregar Datos del Estudio</button>
+                        <i class="icon-ok icon-white"></i> Agregar Datos del Estudio</button>
                     <button class="btn">
-                        <i class="icon-pencil"></i>Modificar Datos</button>
+                        <i class="icon-pencil"></i> Modificar Datos</button>
                     <%--<asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio"  class="btn btn-primary"
                         data-bind="click: GuardarEstudio" />
                     <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />--%>
