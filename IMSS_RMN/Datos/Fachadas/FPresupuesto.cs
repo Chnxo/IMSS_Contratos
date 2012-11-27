@@ -57,13 +57,20 @@ namespace IMSS_RMN.Datos.Fachadas
 
         public clsPresupuesto getPresupuesto()
         {
-            DataTable dt = SqlHelper.ExecuteDataset(SqlHelper.connString, "getPresupuesto").Tables[0];
-
             clsPresupuesto presupuesto = new clsPresupuesto();
-            presupuesto.ID = Convert.ToInt32(dt.Rows[0]["Pre_Id"]);
-            presupuesto.Num_contrato = Convert.ToInt32(dt.Rows[0]["Pre_num_contrato"]);
-            presupuesto.Monto = Convert.ToDecimal(dt.Rows[0]["Pre_Monto"]);
 
+            try
+            {
+                DataTable dt = SqlHelper.ExecuteDataset(SqlHelper.connString, "getPresupuesto").Tables[0];
+
+                presupuesto.ID = Convert.ToInt32(dt.Rows[0]["Pre_Id"]);
+                presupuesto.Num_contrato = Convert.ToInt32(dt.Rows[0]["Pre_num_contrato"]);
+                presupuesto.Monto = Convert.ToDecimal(dt.Rows[0]["Pre_Monto"]);
+            }
+            catch (Exception)
+            {
+            }
+            
             return presupuesto;
         }
 

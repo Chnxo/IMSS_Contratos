@@ -2,7 +2,6 @@
 var viewModel;
 
 $(function () {
-    //    $('#fSolicitud').datepicker();
     $('#fSolicitud').datepicker();
     $('#fRealizacion').datepicker();
     $.ajax({

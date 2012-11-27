@@ -6,6 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4 class="centrado">
         Control de pacientes con subrogación de estudio de Resonancia Magnética Nuclear</h4>
+    <!-- ko if: Presupuesto.Num_contrato() != 0 -->
     <div>
         <div class="form-horizontal">
             <div class="row-fluid">
@@ -141,6 +142,10 @@
             </div>
         </div>
     </div>
+    <!-- /ko -->
+    <!-- ko if: Presupuesto.Num_contrato() == 0 -->
+    <h1 class="centrado">No hay presupuesto disponible.</h1>
+    <!-- /ko -->
     <%-- Modal Alert --%>
     <div id="alertModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">

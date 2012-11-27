@@ -22,8 +22,8 @@
                         <td data-bind="text: Cal_Nombre">
                         </td>
                         <td>
-                            <icon class="icon-pencil"></icon>
-                            <icon class="icon-remove"></icon>
+                            <i class="icon-pencil"></i>
+                            <i class="icon-remove"></i>
                         </td>
                     </tr>
                     <!-- /ko -->
@@ -33,17 +33,6 @@
                 <asp:Button ID="btnAgregarPrioridad" runat="server" Text="Agregar Nueva Prioridad"
                     class="btn btn-primary" />
             </h2>
-            <%--<h2>
-                <label class="control-label">
-                    Nombre</label>
-                <div class="controls">
-                    <asp:TextBox ID="txtPartida" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2 class="centrado">
-                <asp:Button ID="btnAgregarPrioridad" runat="server" Text="Agregar Nueva Prioridad"
-                    class="btn btn-primary" />
-            </h2>--%>
         </div>
     </div>
     <script src="JS/ViewModels/PrioridadViewModel.js" type="text/javascript"></script>

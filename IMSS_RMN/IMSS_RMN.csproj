@@ -73,6 +73,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Capturas.aspx" />
+    <Content Include="Consulta.aspx" />
     <Content Include="CSS\EstilosGenerales.css" />
     <Content Include="CSS\MP_Principal_Style.css" />
     <Content Include="Imagenes\aceroinox.jpg" />
@@ -150,6 +151,13 @@
     </Compile>
     <Compile Include="Capturas.aspx.designer.cs">
       <DependentUpon>Capturas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta.aspx.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consulta.aspx.designer.cs">
+      <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Datos\Fachadas\FAdministrador.cs" />
     <Compile Include="Datos\Fachadas\FCapturista.cs" />
