@@ -58,7 +58,7 @@
                                             <li><a href="AdmonPrioridades.aspx">Admón. de Prioridad</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Reportes</a></li>
+                                    <li><a href="ReportesTiposEstudios.aspx">Reportes</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -86,9 +86,9 @@
                             </div>
                         </div>
                         <div class="span4" style="text-align: right;">
-                            <img class="logo" src="Imagenes/logosIMSS/IMSS.png" />
+                            <img class="logo" src="Imagenes/logosIMSS/IMSSfooter.png" />
                         </div>
-                        <div class="span4">
+                        <div class="centrado">
                             <br />
                             <p>
                                 Instituto Mexicano del Seguro Social</p>
