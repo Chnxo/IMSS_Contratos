@@ -25,7 +25,7 @@
                         <label class="control-label">
                             Presupuesto</label>
                         <div class="controls">
-                            <p class="lead" data-bind="text: Presupuesto.Monto">
+                            <p class="lead" data-bind="text: PresupuestoFormateado">
                             </p>
                         </div>
                     </h2>
@@ -39,8 +39,8 @@
                         <div class="controls">
                             <div class="input-prepend date" id="fSolicitud" data-date="" data-date-format="dd-mm-yyyy">
                                 <span class="add-on pull-left"><i class="icon-calendar"></i></span>
-                                <asp:TextBox ID="fechaSolicitud" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_sol"
-                                    ReadOnly="true"></asp:TextBox>
+                                <input type="text" id="fechaSolicitud" class="input-medium" data-bind="value: Estudio.Fecha_sol"
+                                    readonly />
                             </div>
                         </div>
                     </h2>
@@ -52,8 +52,8 @@
                         <div class="controls">
                             <div class="input-prepend date" id="fRealizacion" data-date="" data-date-format="dd-mm-yyyy">
                                 <span class="add-on pull-left"><i class="icon-calendar"></i></span>
-                                <asp:TextBox ID="fechaRealizacion" runat="server" class="input-medium" data-bind="value: Estudio.Fecha_rea"
-                                    ReadOnly="true"></asp:TextBox>
+                                <input type="text" id="fechaRealizacion" class="input-medium" data-bind="value: Estudio.Fecha_rea"
+                                    readonly />
                             </div>
                         </div>
                     </h2>
@@ -132,19 +132,17 @@
                 </h2>
                 <h2 class="centrado">
                     <button class="btn btn-primary" data-bind="click: GuardarEstudio">
-                        <i class="icon-ok icon-white"></i> Agregar Datos del Estudio</button>
+                        <i class="icon-ok icon-white"></i>Agregar Datos del Estudio</button>
                     <button class="btn">
-                        <i class="icon-pencil"></i> Modificar Datos</button>
-                    <%--<asp:Button ID="agregar" runat="server" Text="Agregar Datos del Estudio"  class="btn btn-primary"
-                        data-bind="click: GuardarEstudio" />
-                    <asp:Button ID="modificar" runat="server" Text="Modificar Datos" class="btn" />--%>
+                        <i class="icon-pencil"></i>Modificar Datos</button>
                 </h2>
             </div>
         </div>
     </div>
     <!-- /ko -->
     <!-- ko if: Presupuesto.Num_contrato() == 0 -->
-    <h1 class="centrado">No hay presupuesto disponible.</h1>
+    <h1 class="centrado">
+        No hay presupuesto disponible.</h1>
     <!-- /ko -->
     <%-- Modal Alert --%>
     <div id="alertModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

@@ -112,7 +112,6 @@
     <Content Include="Imagenes\UMAE.png" />
     <Content Include="Imagenes\UMAEcopia.png" />
     <Content Include="Index.aspx" />
-    <Content Include="InicioSesion.aspx" />
     <Content Include="JS\jquery-1.8.2.min.js" />
     <Content Include="JS\Knockout\knockout-2.1.0.js" />
     <Content Include="JS\Knockout\knockout.mapping-latest.debug.js" />
@@ -123,7 +122,6 @@
     <Content Include="JS\ViewModels\PresupuestoViewModel.js" />
     <Content Include="JS\ViewModels\PrioridadViewModel.js" />
     <Content Include="Login.aspx" />
-    <Content Include="ReportesTiposEstudios.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -198,13 +196,6 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.aspx.cs">
-      <DependentUpon>InicioSesion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="InicioSesion.aspx.designer.cs">
-      <DependentUpon>InicioSesion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,19 +211,6 @@
       <DependentUpon>MP_Principal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportesTiposEstudios.aspx.cs">
-      <DependentUpon>ReportesTiposEstudios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ReportesTiposEstudios.aspx.designer.cs">
-      <DependentUpon>ReportesTiposEstudios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\ReporteEstudios.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteEstudios.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ViewModels\CapturasViewModel.cs" />
     <Compile Include="ViewModels\PrioridadViewModel.cs" />
   </ItemGroup>
@@ -240,12 +218,6 @@
     <Content Include="MP_Principal.Master" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Reportes\ReporteEstudios.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteEstudios.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

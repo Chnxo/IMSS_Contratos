@@ -13,24 +13,6 @@ namespace IMSS_RMN {
     public partial class Capturas {
         
         /// <summary>
-        /// fechaSolicitud control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaSolicitud;
-        
-        /// <summary>
-        /// fechaRealizacion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox fechaRealizacion;
-        
-        /// <summary>
         /// nombrePaciente control.
         /// </summary>
         /// <remarks>

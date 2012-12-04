@@ -2,8 +2,6 @@
 var viewModel;
 
 $(function () {
-    $('#fSolicitud').datepicker();
-    $('#fRealizacion').datepicker();
     $.ajax({
         type: "POST",
         url: "Capturas.aspx/CargarViewModel",
@@ -19,17 +17,35 @@ $(function () {
             viewModel.TipoEstudio = ko.observable();
             viewModel.Prioridad = ko.observable();
 
+            viewModel.PresupuestoFormateado = ko.computed(function () {
+                return FormatearPresupuesto(viewModel.Presupuesto.Monto());
+            });
+
             ko.applyBindings(viewModel);
+            $('#fSolicitud').datepicker();
+            $('#fRealizacion').datepicker();
         },
         error: function (error) {
         }
     });
 });
 
+function FormatearPresupuesto(num) {
+    var p = num.toFixed(2).split(".");
+    return "$" + p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+        return  num + (i && !(i % 3) ? "," : "") + acc;
+    }, "") + "." + p[1];
+}
+
 var GuardarEstudio = function () {
     var paciente = ko.mapping.toJS(viewModel.Paciente);
-    var estudio = ko.mapping.toJS(viewModel.Estudio);
     var presupuesto = ko.mapping.toJS(viewModel.Presupuesto);
+    
+    //datapicker desactiva el binding...
+    viewModel.Estudio.Fecha_sol(document.getElementById("fechaSolicitud").value);
+    viewModel.Estudio.Fecha_rea(document.getElementById("fechaRealizacion").value);
+
+    var estudio = ko.mapping.toJS(viewModel.Estudio);
     estudio.Fk_pri_id = viewModel.Prioridad().Pri_id();
     estudio.Fk_tipo_id = viewModel.TipoEstudio().Id_tip_est();
     $.ajax({
@@ -45,7 +61,7 @@ var GuardarEstudio = function () {
                 viewModel.alertMessage("Estudio agregado correctamente.");
                 $('#alertModal').modal('show');
             } else {
-                viewModel.alertMessage("Estudio no agregado.");
+                viewModel.alertMessage("Error al agregar estudio o presupuesto insuficiente.");
                 $('#alertModal').modal('show');
             }
         },
