@@ -16,6 +16,10 @@ namespace IMSS_RMN
 {
     public partial class Capturas : System.Web.UI.Page
     {
+        /// <summary>
+        /// Carga los objetos e información necesaria para la captura del estudio.
+        /// </summary>
+        /// <returns></returns>
         [WebMethod]
         public static CapturasViewModel CargarViewModel()
         {
@@ -31,6 +35,14 @@ namespace IMSS_RMN
             return cvm;
         }
 
+        /// <summary>
+        /// Guarda los datos del estudio realizado.
+        /// </summary>
+        /// <param name="pacienteJSON">Datos del paciente en formato JSON.</param>
+        /// <param name="estudioJSON">Datos del estudio en formato JSON.</param>
+        /// <param name="presupuestoJSON">Datos del presupuesto en formato JSON.</param>
+        /// <param name="costo">El costo del estudio a realizar.</param>
+        /// <returns></returns>
         [WebMethod]
         public static decimal GuardarEstudio(string pacienteJSON, string estudioJSON, string presupuestoJSON, string costo)
         {

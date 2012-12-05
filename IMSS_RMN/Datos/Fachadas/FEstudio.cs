@@ -74,9 +74,17 @@ namespace IMSS_RMN.Datos.Fachadas
         }
 
 
-        public void eliminar_estudio(int ID)
+        public bool eliminar_estudio(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "eli_Estudio_RMN", ID);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

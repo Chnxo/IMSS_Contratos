@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4 class="centrado">
-        Control de pacientes con subrogación de estudio de Resonancia Magnética Nuclear</h4>
+        Captura de Estudios</h4>
     <!-- ko if: Presupuesto.Num_contrato() != 0 -->
     <div>
         <div class="form-horizontal">
@@ -132,9 +132,9 @@
                 </h2>
                 <h2 class="centrado">
                     <button class="btn btn-primary" data-bind="click: GuardarEstudio">
-                        <i class="icon-ok icon-white"></i>Agregar Datos del Estudio</button>
-                    <button class="btn">
-                        <i class="icon-pencil"></i>Modificar Datos</button>
+                        <i class="icon-ok icon-white"></i> Agregar Datos del Estudio</button>
+                    <%--<button class="btn">
+                        <i class="icon-pencil"></i> Modificar Datos</button>--%>
                 </h2>
             </div>
         </div>

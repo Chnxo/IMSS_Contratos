@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4 class="centrado">
-        Formulario para la Administración de la Prioridad</h4>
+        Administración de la Prioridad</h4>
     <div class="form-horizontal">
         <div class="span6 offset3">
             <table class="table table-striped table-bordered">

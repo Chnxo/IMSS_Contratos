@@ -11,7 +11,7 @@ namespace IMSS_RMN.Datos.Interfaces
 
         List<clsEstudio> allEstudios();
 
-        void eliminar_estudio(int ID);
+        bool eliminar_estudio(int ID);
 
         List<clsEstudio> getEstudios();
 
