@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using IMSS_RMN.Datos.Interfaces;
-using System.Data;
 
 namespace IMSS_RMN.Datos.Fachadas
 {
-    public class FPrioridad:IPrioridad
+    public class FPrioridad : IPrioridad
     {
         private static FPrioridad fprioridad = new FPrioridad();
 
         private FPrioridad()
         {
-
         }
 
         public static FPrioridad Instancia()
@@ -21,14 +20,35 @@ namespace IMSS_RMN.Datos.Fachadas
             return fprioridad;
         }
 
-        public void agregar_Prioridad(clsPrioridad pri)
+        public bool agregar_Prioridad(clsPrioridad pri)
         {
-            throw new NotImplementedException();
+            try
+            {
+                object[] prioridad = new object[2];
+                prioridad[0] = pri.Pri_id;
+                prioridad[1] = pri.Cal_Nombre;
+
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_tip_Prioridad_RMN", prioridad);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void eliminar_prioridad(int clave_pri)
+        public bool eliminar_prioridad(int clave_pri)
         {
-            throw new NotImplementedException();
+            try
+            {
+                object clave = clave_pri;
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "eli_prioridad_RMN", clave);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<clsPrioridad> getPrioridades()
