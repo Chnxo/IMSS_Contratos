@@ -118,6 +118,7 @@
     <Content Include="JS\Knockout\knockout.mapping-latest.js" />
     <Content Include="JS\Knockout\knockout.validation.js" />
     <Content Include="JS\Knockout\knockout.validation.min.js" />
+    <Content Include="JS\ViewModels\TiposEstudiosViewModel.js" />
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
     <Content Include="JS\ViewModels\PresupuestoViewModel.js" />
     <Content Include="JS\ViewModels\PrioridadViewModel.js" />
@@ -223,6 +224,7 @@
     </Compile>
     <Compile Include="ViewModels\CapturasViewModel.cs" />
     <Compile Include="ViewModels\PrioridadViewModel.cs" />
+    <Compile Include="ViewModels\TiposEstudioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MP_Principal.Master" />

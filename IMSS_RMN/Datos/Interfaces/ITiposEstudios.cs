@@ -7,9 +7,9 @@ namespace IMSS_RMN.Datos.Interfaces
 {
     public interface ITiposEstudios
     {
-        void agregar_tipo_estudio(clsTipoEstudio nTipo);
+        bool guardar_tipo_estudio(clsTipoEstudio nTipo);
 
-        void eliminar_tipo_Estudio(int clave_tip_est);
+        bool eliminar_tipo_Estudio(int clave_tip_est);
 
         List<clsTipoEstudio> getTiposEstudios();
 

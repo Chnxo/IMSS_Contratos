@@ -16,12 +16,12 @@ namespace IMSS_RMN
 
         protected void bntRepTiposEst_Click(object sender, EventArgs e)
         {
-            ReporteEstudios.Visible = true;
+           // ReporteEstudios.Visible = true;
         }
 
         protected void btnRepDesaparece_Click(object sender, EventArgs e)
         {
-            ReporteEstudios.Visible = false;
+            //ReporteEstudios.Visible = false;
         }
     }
 }

@@ -13,30 +13,39 @@ namespace IMSS_RMN {
     public partial class AdmonTiposEstudios {
         
         /// <summary>
-        /// Control txtPartida.
+        /// Control Nom_Tip_Est.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPartida;
+        protected global::System.Web.UI.WebControls.TextBox Nom_Tip_Est;
         
         /// <summary>
-        /// Control txtCostp.
+        /// Control Costo_Tip_Est.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCostp;
+        protected global::System.Web.UI.WebControls.TextBox Costo_Tip_Est;
         
         /// <summary>
-        /// Control btnAgregarTipoEst.
+        /// Control btnAgregarTipEst.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarTipoEst;
+        protected global::System.Web.UI.WebControls.Button btnAgregarTipEst;
+        
+        /// <summary>
+        /// Control Button1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

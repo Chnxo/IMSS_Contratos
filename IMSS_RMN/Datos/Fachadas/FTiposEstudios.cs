@@ -21,12 +21,25 @@ namespace IMSS_RMN.Datos.Fachadas
             return ftiposestudios;
         }
 
-        public void agregar_tipo_estudio(clsTipoEstudio nTipo)
+        public bool guardar_tipo_estudio(clsTipoEstudio nTipo)
         {
-            throw new NotImplementedException();
+            try
+            {
+                object[] tipoEstudio = new object[3];
+                tipoEstudio[0] = nTipo.Id_tip_est;
+                tipoEstudio[1] = nTipo.Tip_est_nombre;
+                tipoEstudio[2] = nTipo.Costo;
+
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_tip_est_RMN", tipoEstudio);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void eliminar_tipo_Estudio(int clave_tip_est)
+        public bool eliminar_tipo_Estudio(int clave_tip_est)
         {
             throw new NotImplementedException();
         }

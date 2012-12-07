@@ -11,7 +11,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <h2>
+<%--        <h2>
         <center> <asp:Button ID="bntRepTiposEst" runat="server" 
             Text="Ver todos los tipos de Estudios" onclick="bntRepTiposEst_Click" class="btn"/>
         <asp:Button ID="btnRepDesaparece" runat="server" Text="Ocultar Reporte" 
@@ -28,7 +28,7 @@
         <Report FileName="Reportes\ReporteEstudios.rpt">
         </Report>
         </CR:CrystalReportSource></center>
-        </h2>
+        </h2>--%>
 
     </div>
 </asp:Content>
