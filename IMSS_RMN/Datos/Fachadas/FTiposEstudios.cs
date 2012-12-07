@@ -41,7 +41,16 @@ namespace IMSS_RMN.Datos.Fachadas
 
         public bool eliminar_tipo_Estudio(int clave_tip_est)
         {
-            throw new NotImplementedException();
+            try
+            {
+                object clave = clave_tip_est;
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString,"eli_tipo_est_RMN",clave);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public List<clsTipoEstudio> getTiposEstudios()

@@ -40,6 +40,19 @@ namespace IMSS_RMN
 
         }
 
+        [WebMethod]
+        public static object EliminarTipoEstudio(string clave)
+        {
+            if (FTiposEstudios.Instancia().eliminar_tipo_Estudio(Convert.ToInt32(clave)))
+            {
+                return (new { valid = true, tiposEstudios = FTiposEstudios.Instancia().getTiposEstudios() });
+            }
+            else
+            {
+                return (new { valid = false });
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }

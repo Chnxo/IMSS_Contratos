@@ -27,7 +27,7 @@
                         <td data-bind="text: Costo"></td>
                         <td>
                         <a href="#" data-bind="click: EditarTipoEstudio"><i class="icon-pencil"></i></a>
-                        <a href="#"><i class="icon-remove"></i></a>
+                        <a href="#" data-bind="click: ConfirmarEliminarTipoEstudio"><i class="icon-remove"></i></a>
                         </td>
                     </tr>
                 </tbody>
@@ -72,7 +72,7 @@
         </div>
         <div class="modal-footer">
             <!-- ko if: Eliminando -->
-            <button class="btn btn-primary" data-bind="click: EliminarPrioridad" aria-hidden="true">
+            <button class="btn btn-primary" data-bind="click: EliminarTipoEstudio" aria-hidden="true">
                 Si</button>
                 <button class="btn" data-dismiss="modal" aria-hidden="true" data-bind="click: Cancelar">
                 No</button>

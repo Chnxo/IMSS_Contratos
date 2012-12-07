@@ -23,6 +23,8 @@ $(function () {
             ko.applyBindings(viewModel);
         },
         error: function (error) {
+            viewModel.modalMessage("No se pudo establecer conexión con el servidor.");
+            $('#alertModal').modal('show');
         }
     });
 });
@@ -62,8 +64,40 @@ var GuardarTipoEstudio = function () {
 var EditarTipoEstudio = function (TipoEstudio) {
     viewModel.Editando(true);
     viewModel.Accion("Guardar Cambios");
+    viewModel.TipoEstudio.Id_tip_est(TipoEstudio.Id_tip_est());
     viewModel.TipoEstudio.Tip_est_nombre(TipoEstudio.Tip_est_nombre());
     viewModel.TipoEstudio.Costo(TipoEstudio.Costo());
+};
+
+var ConfirmarEliminarTipoEstudio = function (TipoEstudio) {
+    viewModel.Eliminando(true);
+    viewModel.TipoEstudio.Id_tip_est(TipoEstudio.Id_tip_est());
+    viewModel.modalMessage("Esta seguro que desea eliminar este Tipo de Estudio?");
+    $('#alertModal').modal('show');
+};
+
+var EliminarTipoEstudio = function () {
+    $.ajax({
+        type: "POST",
+        url: "AdmonTiposEstudios.aspx/EliminarTipoEstudio",
+        data: "{'clave':'" + viewModel.TipoEstudio.Id_tip_est() + "'}",
+        contentType: "application/json",
+        dataType: "json",
+        success: function (data) {
+            if (data.d.valid) {
+                var tiposEstudiosJS = data.d.tiposEstudios;
+                viewModel.TipoEstudios(ko.mapping.fromJS(tiposEstudiosJS));
+                viewModel.alertMessage("Tipo de Estudio eliminado correctamente.");
+                viewModel.alertSuccess(true);
+                viewModel.TipoEstudio.Id_tip_est(-1);
+                viewModel.Eliminando(false);
+            }
+        },
+        error: function (error) {
+            viewModel.modalMessage("No se pudo establecer conexión con el servidor.");
+            $('#alertModal').modal('show');
+        }
+    });
 };
 
 var Cancelar = function () {
@@ -74,4 +108,9 @@ var Cancelar = function () {
         viewModel.Accion("Agregar Tipo de Estudio");
     }
     viewModel.TipoEstudio.Id_tip_est(-1);
+};
+
+var hideModal = function () {
+    viewModel.alertSuccess(false);
+    viewModel.Eliminando(false);
 };
