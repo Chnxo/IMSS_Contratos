@@ -21,7 +21,8 @@
                 </div>
             </h2>
             <h2 class="centrado">
-                <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesión" class="btn btn-primary" />
+                <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesión" 
+                    class="btn btn-primary" onclick="btnLogin_Click" />
             </h2>
         </div>
     </div>

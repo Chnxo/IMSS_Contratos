@@ -3,44 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-
-    public class Usuario
+namespace IMSS_RMN.Dominio
+{
+    public enum Nivel
     {
-        private int _id = 0;
-        public int Id
+        Capturista, AdminLVL1
+    }
+
+    public class Usuario : Persona
+    {
+        private bool activo;
+        private string contrasenia = string.Empty;
+        private Nivel lvl;
+        private string user = string.Empty;
+
+        public Usuario()
         {
-            get { return _id; }
-            set { _id = value; }
         }
 
-        private string _nombre = string.Empty;
-        public string Nombre
+        public Usuario(string user, string contrasenia)
         {
-            get { return _nombre; }
-            set { _nombre = value; }
+            this.user = user;
+            this.contrasenia = contrasenia;
         }
 
-        private string _contrasena = string.Empty;
-        public string Contrasena
+        public Usuario(bool activo, string contrasenia, Nivel lvl, string user, string apellido, string correo, DateTime cumpleanios, string direccion, string nombre, string telefono)
+            : base(apellido, correo, cumpleanios, direccion, nombre, telefono)
         {
-            get { return _contrasena; }
-            set { _contrasena = value; }
+            this.activo = activo;
+            this.contrasenia = contrasenia;
+            this.lvl = lvl;
+            this.user = user;
         }
 
-        private string _correo = string.Empty;
-        public string Correo
+        public bool Activo
         {
-            get { return _correo; }
-            set { _correo = value; }
+            get { return activo; }
+            set { activo = value; }
         }
 
-        public Usuario() { }
-
-        public Usuario(int id, string nombre, string contrasena, string correo)
+        public string Contrasenia
         {
-            _id = id;
-            _nombre = nombre;
-            _contrasena = contrasena;
-            _correo = correo;
+            get { return contrasenia; }
+            set { contrasenia = value; }
+        }
+
+        public Nivel Lvl
+        {
+            get { return lvl; }
+            set { lvl = value; }
+        }
+
+        public string User
+        {
+            get { return user; }
+            set { user = value; }
         }
     }
+}

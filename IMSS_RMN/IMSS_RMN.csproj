@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Acerca.aspx" />
     <Content Include="AdmonPresupuesto.aspx" />
     <Content Include="AdmonPrioridades.aspx" />
     <Content Include="AdmonTiposEstudios.aspx" />
@@ -135,6 +136,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Acerca.aspx.cs">
+      <DependentUpon>Acerca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Acerca.aspx.designer.cs">
+      <DependentUpon>Acerca.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdmonPresupuesto.aspx.cs">
       <DependentUpon>AdmonPresupuesto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -170,28 +178,27 @@
     <Compile Include="Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Datos\Fachadas\FAdministrador.cs" />
-    <Compile Include="Datos\Fachadas\FCapturista.cs" />
     <Compile Include="Datos\Fachadas\FEstudio.cs" />
     <Compile Include="Datos\Fachadas\FPacientes.cs" />
     <Compile Include="Datos\Fachadas\FPresupuesto.cs" />
     <Compile Include="Datos\Fachadas\FPrioridad.cs" />
+    <Compile Include="Datos\Fachadas\FSesion.cs" />
     <Compile Include="Datos\Fachadas\FTiposEstudios.cs" />
-    <Compile Include="Datos\Interfaces\IAdministrador.cs" />
-    <Compile Include="Datos\Interfaces\ICapturista.cs" />
     <Compile Include="Datos\Interfaces\IEstudio.cs" />
     <Compile Include="Datos\Interfaces\IPacientes.cs" />
     <Compile Include="Datos\Interfaces\IPresupuesto.cs" />
     <Compile Include="Datos\Interfaces\IPrioridad.cs" />
+    <Compile Include="Datos\Interfaces\ISesion.cs" />
     <Compile Include="Datos\Interfaces\ITiposEstudios.cs" />
+    <Compile Include="Datos\Sesion.cs" />
     <Compile Include="Datos\SQLHelper.cs" />
-    <Compile Include="Dominio\Administrador.cs" />
-    <Compile Include="Dominio\Capturista.cs" />
     <Compile Include="Dominio\clsEstudio.cs" />
     <Compile Include="Dominio\clsPaciente.cs" />
     <Compile Include="Dominio\clsPresupuesto.cs" />
     <Compile Include="Dominio\clsPrioridad.cs" />
     <Compile Include="Dominio\clsTipoEstudio.cs" />
+    <Compile Include="Dominio\Paciente.cs" />
+    <Compile Include="Dominio\Persona.cs" />
     <Compile Include="Dominio\Usuario.cs" />
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -223,6 +230,7 @@
       <DependentUpon>ReportesTiposEstudios.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\CapturasViewModel.cs" />
+    <Compile Include="ViewModels\PresupuestoViewModel.cs" />
     <Compile Include="ViewModels\PrioridadViewModel.cs" />
     <Compile Include="ViewModels\TiposEstudioViewModel.cs" />
   </ItemGroup>
