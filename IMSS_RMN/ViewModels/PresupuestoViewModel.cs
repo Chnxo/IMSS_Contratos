@@ -9,11 +9,11 @@ namespace IMSS_RMN.ViewModels
     {
         public PresupuestoViewModel()
         {
-            Presupuesto = new clsPresupuesto();
-            Presupuestos = new List<clsPresupuesto>();
+            PresupuestoNuevo = new clsPresupuesto();
+            PresupuestoActual = new List<clsPresupuesto>();
         }
 
-        public clsPresupuesto Presupuesto { get; set; }
-        public List<clsPresupuesto> Presupuestos { get; set; }
+        public clsPresupuesto PresupuestoNuevo { get; set; }
+        public List<clsPresupuesto> PresupuestoActual { get; set; }
     }
 }

@@ -26,8 +26,8 @@ namespace IMSS_RMN.Datos.Fachadas
             try
             {
                 object[] presupuestoACT = new object[2];
-                presupuestoACT[0] = presupuesto.ID;
-                presupuestoACT[1] = costo;
+                //presupuestoACT[0] = presupuesto.ID;
+                //presupuestoACT[1] = costo;
 
                 return Convert.ToDecimal(SqlHelper.ExecuteScalar(SqlHelper.connString, "actualizarPresupuesto", presupuestoACT));
             }
@@ -37,17 +37,24 @@ namespace IMSS_RMN.Datos.Fachadas
             }
         }
 
-        public void agregar_presupuesto(clsPresupuesto pre)
+        public bool agregar_presupuesto(clsPresupuesto pre)
         {
-            object[] presupuesto = new object[5];
-            presupuesto[0] = pre.Partida;
-            presupuesto[1] = pre.Num_contrato;
-            presupuesto[2] = pre.Concepto;
-            presupuesto[3] = pre.Ano;
-            presupuesto[4] = pre.Monto;
-            presupuesto[5] = pre.Vigencia;
+            try
+            {
+                object[] presupuesto = new object[4];
+                presupuesto[0] = pre.MontoOriginal;
+                presupuesto[1] = pre.FechaInicio;
+                presupuesto[2] = pre.FechaFin;
+                presupuesto[3] = pre.Concepto;
 
-            SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_presupuesto_RMN", presupuesto);
+                SqlHelper.ExecuteNonQuery(SqlHelper.connString, "agr_presupuesto_RMN", presupuesto);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
         public void eliminar_presupuesto(int clave_pre)
@@ -63,9 +70,12 @@ namespace IMSS_RMN.Datos.Fachadas
             {
                 DataTable dt = SqlHelper.ExecuteDataset(SqlHelper.connString, "getPresupuesto").Tables[0];
 
-                presupuesto.ID = Convert.ToInt32(dt.Rows[0]["Pre_Id"]);
-                presupuesto.Num_contrato = Convert.ToInt32(dt.Rows[0]["Pre_num_contrato"]);
-                presupuesto.Monto = Convert.ToDecimal(dt.Rows[0]["Pre_Monto"]);
+                presupuesto.Pre_ID = Convert.ToInt32(dt.Rows[0]["Pre_Id"]);
+                presupuesto.MontoOriginal = Convert.ToDouble(dt.Rows[0]["montoOriginal"]);
+                presupuesto.MontoActual = Convert.ToDouble(dt.Rows[0]["montoActual"]);
+                presupuesto.FechaInicio = Convert.ToDateTime(dt.Rows[0]["fechaInicio"]);
+                presupuesto.FechaFin = Convert.ToDateTime(dt.Rows[0]["fechaFin"]);
+                presupuesto.Concepto = Convert.ToString(dt.Rows[0]["concepto"]);
             }
             catch (Exception)
             {

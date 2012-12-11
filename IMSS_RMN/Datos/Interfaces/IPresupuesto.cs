@@ -7,7 +7,7 @@ namespace IMSS_RMN.Datos.Interfaces
 {
     public interface IPresupuesto
     {
-        void agregar_presupuesto(clsPresupuesto pre);
+        bool agregar_presupuesto(clsPresupuesto pre);
 
         void eliminar_presupuesto(int clave_pre);
 

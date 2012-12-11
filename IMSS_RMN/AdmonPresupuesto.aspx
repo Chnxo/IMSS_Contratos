@@ -5,54 +5,46 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4 class="centrado">
-        Formulario para la Administración del Presupuesto</h4>
+        Administración del Presupuesto</h4>
     <div class="form-horizontal">
-        <div class="span6 offset3">
-            <h2>
-                <label class="control-label">
-                    Partida</label>
-                <div class="controls">
-                    <asp:TextBox data-bind="value: Partida" ID="txtPartida" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2>
-                <label class="control-label">
-                    Núm. Contrato</label>
-                <div class="controls">
-                    <asp:TextBox data-bind="value: Num_contrato" ID="txtNumContrato" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2>
-                <label class="control-label">
-                    Concepto</label>
-                <div class="controls">
-                    <textarea data-bind="value: Concepto" rows="3" class="input-large"></textarea>
-                </div>
-            </h2>
-            <h2>
-                <label class="control-label">
-                    Vigencia del Contrato</label>
-                <div class="controls">
-                    <asp:TextBox data-bind="value: Vigencia" ID="TextBox3" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2>
-                <label class="control-label">
-                    Fecha</label>
-                <div class="controls">
-                    <asp:TextBox data-bind="value: Ano" ID="TextBox4" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2>
-                <label class="control-label">
-                    Monto</label>
-                <div class="controls">
-                    <asp:TextBox data-bind="value: Monto" ID="TextBox5" runat="server" class="input-medium"></asp:TextBox>
-                </div>
-            </h2>
-            <h2 class="centrado">
-                <asp:Button ID="btnAgregarPres" runat="server" Text="Agregar Nuevo Presupuesto" class="btn btn-primary" data-bind="click: GuardarPresupuesto" />
-            </h2>
+        <div class="span8 offset2">
+            <table class="table table-striped table-bordered">
+                <thead class="centrado">
+                    <tr>
+                        <th>
+                            Fecha Inicio
+                        </th>
+                        <th>
+                            Fecha Finalización
+                        </th>
+                        <th>
+                            Monto Original
+                        </th>
+                        <th>
+                            Monto Actual
+                        </th>
+                        <th>
+                            Concepto
+                        </th>
+                        <th>
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="centrado" data-bind="foreach: PresupuestoActual">
+                    <tr>
+                        <td data-bind="text: FechaInicio"></td>
+                        <td data-bind="text: FechaFin"></td>
+                        <td data-bind="text: MontoOriginal"></td>
+                        <td data-bind="text: MontoActual"></td>
+                        <td data-bind="text: Concepto"></td>
+                        <td>
+                        <a href="#" data-bind="click: EditarTipoEstudio"><i class="icon-pencil"></i></a>
+                        <a href="#" data-bind="click: ConfirmarEliminarTipoEstudio"><i class="icon-remove"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <%-- Modal Alert --%>

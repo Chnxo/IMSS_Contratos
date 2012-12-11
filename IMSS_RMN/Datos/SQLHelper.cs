@@ -36,7 +36,8 @@ namespace IMSS_RMN.Datos
         /// </summary>
     public sealed class SqlHelper
     {
-        public static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        //public static string connString = "Data Source=pse020\\sqlexpress;Initial Catalog=IMSS_CSC;Integrated Security=True";
+        public static string connString = "Data Source=GUSTAVO-PC\\SQLEXPRESS;Initial Catalog=IMSS_CSC;Integrated Security=True";
         //public static string connString = "Data Source=UTSDEVELOPER\\SQLEXPRESS;Initial Catalog=IMSS_CSC;Integrated Security=True";
         //public static string connString = "Data Source=EMELITH-HP\\Emelith;Initial Catalog=IMSS_CSC;Integrated Security=True";
 

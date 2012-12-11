@@ -7,7 +7,7 @@
     <h1 class="centrado">Información</h1>
     <div class="span8 offset2">
     <p>
-        El presente proyecto se realizo para un proyecto escolar, en el fue desarrollado
+        La presente aplicación web se realizo para un proyecto escolar, en el fue desarrollado
         utilizando el patron <strong>MVVM</strong> en conjunto con las siguientes tecnologias:</p>
     <ul>
         <li><strong>ASP.NET</strong></li>
