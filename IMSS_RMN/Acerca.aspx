@@ -7,7 +7,7 @@
     <h1 class="centrado">Información</h1>
     <div class="span8 offset2">
     <p>
-        La presente aplicación web se realizo para un proyecto escolar, en el fue desarrollado
+        La presente aplicación web se realizó para un proyecto escolar, el cual fue desarrollado
         utilizando el patron <strong>MVVM</strong> en conjunto con las siguientes tecnologias:</p>
     <ul>
         <li><strong>ASP.NET</strong></li>
@@ -18,7 +18,7 @@
     <strong>Integrantes:</strong>
     <ul>
         <li><strong>Corral Soto Emelith Suzeth</strong></li>
-        <li><strong>Luis Lin Gustavo Apolonio</strong></l>
+        <li><strong>Luis Lin Gustavo Apolonio</strong></li>
     </ul>
     </div>
 </asp:Content>

@@ -21,15 +21,54 @@ namespace IMSS_RMN
             try
             {
                 pvm.PresupuestoActual.Add(FPresupuesto.Instancia().getPresupuesto());
+                pvm.HayPresupuestoActual = true;
             }
             catch { }
             return pvm;
         }
 
         [WebMethod]
-        public static bool GuardarPresupuesto(string presupuestoJSON)
+        public static object GuardarPresupuesto(string presupuestoJSON)
         {
-            return false;
+            clsPresupuesto presupuesto = JsonConvert.DeserializeObject<clsPresupuesto>(presupuestoJSON);
+            presupuesto.MontoActual = presupuesto.MontoOriginal;
+            if (FPresupuesto.Instancia().agregar_presupuesto(presupuesto))
+            {
+                return (new { valid = true, presupuesto = FPresupuesto.Instancia().getPresupuesto() });
+            }
+            else
+            {
+                return (new { valid = false, message = "Error" });
+            }
+            
+        }
+
+        [WebMethod]
+        public static object EditarPresupuesto(string presupuestoJSON)
+        {
+            clsPresupuesto presupuesto = JsonConvert.DeserializeObject<clsPresupuesto>(presupuestoJSON);
+            if (FPresupuesto.Instancia().modificar_presupuesto(presupuesto))
+            {
+                return (new { valid = true, presupuesto = FPresupuesto.Instancia().getPresupuesto() });
+            }
+            else
+            {
+                return (new { valid = false, message = "Error" });
+            }
+        }
+
+        [WebMethod]
+        public static object EliminarPresupuesto(string id)
+        {
+            if (FPresupuesto.Instancia().eliminar_presupuesto(Convert.ToInt32(id)))
+            {
+                return (new { valid = true });
+            }
+            else
+            {
+                return (new { valid = false });
+            }
+
         }
 
         protected void Page_Load(object sender, EventArgs e)

@@ -9,7 +9,7 @@ namespace IMSS_RMN.Datos.Interfaces
     {
         bool agregar_presupuesto(clsPresupuesto pre);
 
-        void eliminar_presupuesto(int clave_pre);
+        bool eliminar_presupuesto(int clave_pre);
 
         decimal actualizarPresupuesto(clsPresupuesto presupuesto, decimal costo);
 
@@ -17,6 +17,6 @@ namespace IMSS_RMN.Datos.Interfaces
 
         List<clsPresupuesto> getPresupuestos();
 
-        void modificar_presupuesto(clsPresupuesto pres);
+        bool modificar_presupuesto(clsPresupuesto pres);
     }
 }

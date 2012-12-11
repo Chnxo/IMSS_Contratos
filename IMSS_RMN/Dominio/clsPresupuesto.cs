@@ -9,8 +9,8 @@ using System.Web;
 public class clsPresupuesto
 {
     private string concepto;
-    private DateTime fechaFin;
-    private DateTime fechaInicio;
+    private string fechaFin;
+    private string fechaInicio;
     private double montoActual;
     private double montoOriginal;
     private int pre_ID;
@@ -21,13 +21,13 @@ public class clsPresupuesto
         set { concepto = value; }
     }
 
-    public DateTime FechaFin
+    public string FechaFin
     {
         get { return fechaFin; }
         set { fechaFin = value; }
     }
 
-    public DateTime FechaInicio
+    public string FechaInicio
     {
         get { return fechaInicio; }
         set { fechaInicio = value; }

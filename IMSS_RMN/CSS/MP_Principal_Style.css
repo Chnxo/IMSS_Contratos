@@ -6,6 +6,7 @@
 .Configuracion
 {
     max-width: 1000px;
+    min-width: 776px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
