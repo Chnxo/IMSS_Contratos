@@ -46,6 +46,7 @@
                                     <li class="dropdown"><a id="admins" role="button" class="dropdown-toggle" data-toggle="dropdown"
                                         href="#">Administración<b class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu" aria-labelledby="admins">
+                                            <li><a href="AdmonUsuarios.aspx">Admón. Usuarios</a></li>
                                             <li><a href="AdmonPresupuesto.aspx">Admón. Del Presupuesto</a></li>
                                             <li><a href="AdmonTiposEstudios.aspx">Admón. de Tipos de Estudios</a></li>
                                             <li><a href="AdmonPrioridades.aspx">Admón. de Prioridad</a></li>

@@ -68,6 +68,7 @@
     <Content Include="AdmonPresupuesto.aspx" />
     <Content Include="AdmonPrioridades.aspx" />
     <Content Include="AdmonTiposEstudios.aspx" />
+    <Content Include="AdmonUsuarios.aspx" />
     <Content Include="bootstrap\css\bootstrap-responsive.css" />
     <Content Include="bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="bootstrap\css\bootstrap.css" />
@@ -122,6 +123,7 @@
     <Content Include="JS\ViewModels\CapturasViewModel.js" />
     <Content Include="JS\ViewModels\PresupuestoViewModel.js" />
     <Content Include="JS\ViewModels\PrioridadViewModel.js" />
+    <Content Include="JS\ViewModels\UsuariosViewModel.js" />
     <Content Include="Login.aspx" />
     <Content Include="ReportesTiposEstudios.aspx" />
     <Content Include="Web.config">
@@ -163,6 +165,13 @@
     <Compile Include="AdmonTiposEstudios.aspx.designer.cs">
       <DependentUpon>AdmonTiposEstudios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdmonUsuarios.aspx.cs">
+      <DependentUpon>AdmonUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdmonUsuarios.aspx.designer.cs">
+      <DependentUpon>AdmonUsuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Capturas.aspx.cs">
       <DependentUpon>Capturas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -179,16 +188,20 @@
     </Compile>
     <Compile Include="Datos\Fachadas\FEstudio.cs" />
     <Compile Include="Datos\Fachadas\FPacientes.cs" />
+    <Compile Include="Datos\Fachadas\FPersona.cs" />
     <Compile Include="Datos\Fachadas\FPresupuesto.cs" />
     <Compile Include="Datos\Fachadas\FPrioridad.cs" />
     <Compile Include="Datos\Fachadas\FSesion.cs" />
     <Compile Include="Datos\Fachadas\FTiposEstudios.cs" />
+    <Compile Include="Datos\Fachadas\FUsuario.cs" />
     <Compile Include="Datos\Interfaces\IEstudio.cs" />
     <Compile Include="Datos\Interfaces\IPacientes.cs" />
+    <Compile Include="Datos\Interfaces\IPersona.cs" />
     <Compile Include="Datos\Interfaces\IPresupuesto.cs" />
     <Compile Include="Datos\Interfaces\IPrioridad.cs" />
     <Compile Include="Datos\Interfaces\ISesion.cs" />
     <Compile Include="Datos\Interfaces\ITiposEstudios.cs" />
+    <Compile Include="Datos\Interfaces\IUsuario.cs" />
     <Compile Include="Datos\Sesion.cs" />
     <Compile Include="Datos\SQLHelper.cs" />
     <Compile Include="Dominio\clsEstudio.cs" />
@@ -232,6 +245,7 @@
     <Compile Include="ViewModels\PresupuestoViewModel.cs" />
     <Compile Include="ViewModels\PrioridadViewModel.cs" />
     <Compile Include="ViewModels\TiposEstudioViewModel.cs" />
+    <Compile Include="ViewModels\UsuariosViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MP_Principal.Master" />
